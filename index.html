@@ -13,7 +13,7 @@
 
   <!-- Open Graph / Social -->
   <meta property="og:title" content="IngePresupuestos · Software para Presupuestos de Obra">
-  <meta property="og:description" content="Profesional, peruano, con importadores nativos de Delphin/PowerCost/S10. Prueba 30 días gratis.">
+  <meta property="og:description" content="Profesional, con importadores nativos de Delphin/PowerCost/S10. Prueba 30 días gratis.">
   <meta property="og:image" content="https://ingepresupuestos.com/images/og-banner.png">
   <meta property="og:url" content="https://ingepresupuestos.com">
   <meta property="og:type" content="website">
@@ -55,8 +55,7 @@
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-text">
-        <span class="badge">Trial 30 días · Sin tarjeta · Sin registro</span>
-        <h1>El software de presupuestos de obra <span class="accent">hecho en Perú</span>.</h1>
+        <h1>El software de presupuestos de obra.</h1>
         <p class="hero-sub">
           Partidas, ACUs, metrados, cronograma Gantt, fórmula polinómica, índices INEI.
           Compatible con Delphin Express, PowerCost y S10.
@@ -93,7 +92,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Todo lo que tu obra necesita</h2>
-        <p>Construido por un ingeniero peruano para ingenieros y constructoras peruanas.</p>
+        <p>Construido para los ingenieros y constructoras de Perú y Latinoamérica.</p>
       </div>
       <div class="features-grid">
         <div class="feature-card">
@@ -133,7 +132,7 @@
         </div>
         <div class="feature-card">
           <div class="feature-icon">💾</div>
-          <h3>Trabajá offline</h3>
+          <h3>Trabaja offline</h3>
           <p>Tus datos viven en tu PC, no en la nube. SQLite local con backups automáticos. Sin internet salvo para IA.</p>
         </div>
       </div>
@@ -145,7 +144,7 @@
     <div class="container">
       <div class="section-head">
         <span class="badge">Migración sin dolor</span>
-        <h2>Importá desde el software que ya usás</h2>
+        <h2>Importa desde el software que ya usas</h2>
         <p>Trae todos tus proyectos existentes sin perder partidas, ACUs ni metrados.</p>
       </div>
       <div class="importers-grid">
@@ -209,7 +208,7 @@
         </a>
       </div>
       <p class="downloads-alt">
-        ¿Preferís versión portable? <a href="#" id="dl-win-zip">Windows ZIP</a> ·
+        ¿Prefieres versión portable? <a href="#" id="dl-win-zip">Windows ZIP</a> ·
         <a href="#" id="dl-linux-tar">Linux tar.gz</a>
       </p>
     </div>
@@ -220,7 +219,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Precios simples</h2>
-        <p>Pagás una sola vez. Sin suscripciones mensuales obligatorias.</p>
+        <p>Pagas una sola vez. Sin suscripciones mensuales obligatorias.</p>
       </div>
       <div class="pricing-grid">
         <div class="pricing-card">
@@ -236,6 +235,9 @@
           </ul>
           <a href="#descargar" class="btn btn-ghost">Descargar</a>
         </div>
+        <!-- Cards Perpetua + Anual ocultas hasta definir precios finales (publicar al salir de beta).
+             Para reactivar, descomentar este bloque entero. -->
+        <!--
         <div class="pricing-card pricing-featured">
           <span class="pricing-badge">Recomendado</span>
           <h3>Perpetua</h3>
@@ -261,10 +263,11 @@
           </ul>
           <a href="#contacto" class="btn btn-ghost">Consultar precio</a>
         </div>
+        -->
       </div>
       <p class="pricing-note">
-        Los precios concretos se publican cuando termine la fase beta.
-        Mientras tanto, contactanos directamente para una licencia anticipada
+        Los precios de las licencias premium se publican cuando termine la fase beta.
+        Mientras tanto, contáctanos directamente para una licencia anticipada
         con descuento de pre-lanzamiento.
       </p>
     </div>
@@ -279,27 +282,27 @@
       <div class="faq-list">
         <details class="faq-item">
           <summary>¿Cómo se instala en Windows?</summary>
-          <p>Descargá el archivo <code>ingepresupuestos-setup-v*.exe</code>. Doble click y seguí el asistente. Si Windows muestra "Windows protegió tu PC", hacé click en <strong>Más información</strong> → <strong>Ejecutar de todas formas</strong> — todavía no compramos certificado de firma digital (sale ~$300/año y lo dejamos para cuando salgamos de beta).</p>
+          <p>Descarga el archivo <code>ingepresupuestos-setup-v*.exe</code>. Doble click y sigue el asistente. Si Windows muestra "Windows protegió tu PC", haz click en <strong>Más información</strong> → <strong>Ejecutar de todas formas</strong> — todavía no compramos certificado de firma digital (sale ~$300/año y lo dejamos para cuando salgamos de beta).</p>
         </details>
         <details class="faq-item">
           <summary>¿Cómo se instala en Linux?</summary>
-          <p>Descargá el <code>.AppImage</code>, dale permisos de ejecución (<code>chmod +x</code> o click derecho → Propiedades → Permisos) y doble click. No requiere instalación de sistema. Si preferís integración con el menú de aplicaciones, usá el <code>.tar.gz</code> con el script <code>install-linux.sh</code> incluido.</p>
+          <p>Descarga el <code>.AppImage</code>, dale permisos de ejecución (<code>chmod +x</code> o click derecho → Propiedades → Permisos) y doble click. No requiere instalación de sistema. Si prefieres integración con el menú de aplicaciones, usa el <code>.tar.gz</code> con el script <code>install-linux.sh</code> incluido.</p>
         </details>
         <details class="faq-item">
           <summary>¿Funciona sin internet?</summary>
-          <p>Sí, completamente offline. Tus datos viven en tu PC (no en la nube), nunca se transmiten al autor. Lo único que requiere internet es: (a) chequear actualizaciones (opcional), (b) usar el asistente IA Tuxia con proveedores cloud — y para esto último podés usar Ollama localmente sin conexión.</p>
+          <p>Sí, completamente offline. Tus datos viven en tu PC (no en la nube), nunca se transmiten al autor. Lo único que requiere internet es: (a) chequear actualizaciones (opcional), (b) usar el asistente IA Tuxia con proveedores cloud — y para esto último puedes usar Ollama localmente sin conexión.</p>
         </details>
         <details class="faq-item">
           <summary>¿Qué pasa si compro una licencia y cambio de PC?</summary>
-          <p>La licencia queda bindada a una máquina mediante un identificador de hardware. Si cambiás de PC (compra nueva, robo, daño irreparable), contactanos y te emitimos una clave nueva sin costo. Hay un límite razonable para evitar abusos (no podés migrar todos los meses).</p>
+          <p>La licencia queda bindada a una máquina mediante un identificador de hardware. Si cambias de PC (compra nueva, robo, daño irreparable), contáctanos y te emitimos una clave nueva sin costo. Hay un límite razonable para evitar abusos (no puedes migrar todos los meses).</p>
         </details>
         <details class="faq-item">
           <summary>¿Mis proyectos quedan exportados a algún formato propietario?</summary>
-          <p>No. Tu base de datos es SQLite estándar — la podés abrir con cualquier herramienta. Los reportes salen en PDF, Excel, Word, ODT y ODS. No te ata a IngePresupuestos: si en el futuro querés migrar a otro software, exportás todo a Excel y listo.</p>
+          <p>No. Tu base de datos es SQLite estándar — la puedes abrir con cualquier herramienta. Los reportes salen en PDF, Excel, Word, ODT y ODS. No te ata a IngePresupuestos: si en el futuro quieres migrar a otro software, exportas todo a Excel y listo.</p>
         </details>
         <details class="faq-item">
           <summary>¿Funciona con MS Project / Primavera P6?</summary>
-          <p>El cronograma Gantt se exporta a XML MSPDI, formato nativo de Microsoft Project. Para Primavera P6 podés abrir el MSPDI desde P6 (lo soporta nativamente).</p>
+          <p>El cronograma Gantt se exporta a XML MSPDI, formato nativo de Microsoft Project. Para Primavera P6 puedes abrir el MSPDI desde P6 (lo soporta nativamente).</p>
         </details>
         <details class="faq-item">
           <summary>¿Lee mis archivos de Delphin Express / PowerCost / S10?</summary>
@@ -307,11 +310,11 @@
         </details>
         <details class="faq-item">
           <summary>¿Cómo es el soporte?</summary>
-          <p>Directo del autor (Ing. Marco Sumari Tellez) por WhatsApp y email. Sin call centers, sin tickets, sin esperar 48 horas — respondés vos directamente.</p>
+          <p>Directo del autor (Ing. Marco Sumari Tellez) por WhatsApp y email. Sin call centers, sin tickets, sin esperar 48 horas — te responde el autor directamente.</p>
         </details>
         <details class="faq-item">
           <summary>¿Y si encuentro un bug o falta una funcionalidad?</summary>
-          <p>Escribinos por WhatsApp o email — leemos todo y priorizamos lo que la mayoría de usuarios pide.</p>
+          <p>Escríbenos por WhatsApp o email — leemos todo y priorizamos lo que la mayoría de usuarios pide.</p>
         </details>
       </div>
     </div>
@@ -325,7 +328,7 @@
           <img src="images/logo.png" alt="IngePresupuestos" width="40" height="40">
           <strong>IngePresupuestos</strong>
         </div>
-        <p>Software para la elaboración de presupuestos de obra. Hecho en Perú.</p>
+        <p>Software para la elaboración de presupuestos de obra.</p>
         <p class="footer-copy">© 2026 Ing. Marco Sumari Tellez. Todos los derechos reservados.</p>
       </div>
       <div class="footer-col">

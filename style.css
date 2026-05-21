@@ -445,6 +445,11 @@ code {
   max-width: 1000px;
   margin: 0 auto;
 }
+/* Cuando solo hay 1 card (premium ocultas), evitar que el grid la estire
+   a 1000px. La constreñimos a ~360px y la centramos. */
+.pricing-grid:has(> .pricing-card:only-child) {
+  max-width: 360px;
+}
 .pricing-card {
   background: var(--white);
   border: 1px solid var(--silver-300);
