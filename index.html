@@ -77,11 +77,12 @@
           <div class="screenshot-toolbar">
             <span></span><span></span><span></span>
           </div>
-          <div class="screenshot-placeholder">
-            <img src="images/logo.svg" alt="" width="120" height="120" style="opacity:0.5">
-            <p style="margin-top:16px; color:#667885">Screenshot del proyecto</p>
-            <p style="font-size:12px; color:#95A3AB">(reemplazar con captura real)</p>
-          </div>
+          <img class="screenshot-img"
+               src="images/screenshots/proyecto-acu.jpg"
+               alt="Vista principal de IngePresupuestos: árbol de partidas con análisis de costos unitarios (ACU)"
+               width="1600" height="900"
+               loading="eager"
+               fetchpriority="high">
         </div>
       </div>
     </div>
@@ -139,8 +140,56 @@
     </div>
   </section>
 
+  <!-- ============ SHOWCASE ============ -->
+  <section id="showcase" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Mira la app en acción</h2>
+        <p>Cuatro de las pantallas que más vas a usar día a día.</p>
+      </div>
+      <div class="showcase-grid">
+        <figure class="showcase-item">
+          <img src="images/screenshots/cronograma-gantt.jpg"
+               alt="Cronograma Gantt con CPM, dependencias FS/SS/FF/SF, holguras e hitos"
+               width="1600" height="860" loading="lazy">
+          <figcaption>
+            <strong>Cronograma Gantt</strong>
+            CPM con ruta crítica, dependencias gráficas, holguras y exportación a MS Project.
+          </figcaption>
+        </figure>
+        <figure class="showcase-item">
+          <img src="images/screenshots/proyecto-resumen.jpg"
+               alt="Vista Resumen del proyecto con distribución del costo directo en donut y top 5 partidas"
+               width="1600" height="860" loading="lazy">
+          <figcaption>
+            <strong>Resumen del proyecto</strong>
+            KPIs, distribución del costo directo en donut y ranking de partidas más costosas.
+          </figcaption>
+        </figure>
+        <figure class="showcase-item">
+          <img src="images/screenshots/centro-reportes.jpg"
+               alt="Centro de Reportes con preview de PDF y exports a Word, ODT, PNG y Excel"
+               width="1600" height="860" loading="lazy">
+          <figcaption>
+            <strong>Centro de Reportes</strong>
+            11 tipos de reporte profesionales en PDF, Excel, Word, ODT y ODS — con preview en vivo.
+          </figcaption>
+        </figure>
+        <figure class="showcase-item">
+          <img src="images/screenshots/importar-powercost.jpg"
+               alt="Diálogo de importación desde PowerCost, Delphin Express, S10, BIM/IFC e ingePresupuestos"
+               width="1600" height="860" loading="lazy">
+          <figcaption>
+            <strong>Importadores nativos</strong>
+            Lee directo .sqlite de Delphin, .prs de PowerCost, Excel de S10 e IFC de BIM.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ IMPORTADORES ============ -->
-  <section id="importadores" class="section">
+  <section id="importadores" class="section section-light">
     <div class="container">
       <div class="section-head">
         <span class="badge">Migración sin dolor</span>
