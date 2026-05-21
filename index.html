@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F37329">
+
+  <title>IngePresupuestos · Software para Presupuestos de Obra · Perú</title>
+
+  <meta name="description" content="Software profesional para la elaboración de presupuestos de obra en Perú. ACUs, cronograma Gantt, importación desde Delphin/PowerCost/S10, exports PDF/Excel/Word. Prueba gratis 30 días.">
+  <meta name="keywords" content="presupuesto obra, ACU, cronograma Gantt, Delphin Express, PowerCost, S10, INEI, CAPECO, ingeniería civil Perú, software construcción">
+  <meta name="author" content="Ing. Marco Sumari Tellez">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="IngePresupuestos · Software para Presupuestos de Obra">
+  <meta property="og:description" content="Profesional, peruano, con importadores nativos de Delphin/PowerCost/S10. Prueba 30 días gratis.">
+  <meta property="og:image" content="https://ingepresupuestos.com/images/og-banner.png">
+  <meta property="og:url" content="https://ingepresupuestos.com">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER (sticky) ============ -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand">
+        <img src="images/logo.png" alt="IngePresupuestos" width="32" height="32">
+        <span>IngePresupuestos</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#features">Características</a>
+        <a href="#importadores">Importadores</a>
+        <a href="#precios">Precios</a>
+        <a href="#faq">Preguntas frecuentes</a>
+        <a href="#descargar" class="btn btn-primary btn-sm">Descargar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <span class="badge">Trial 30 días · Sin tarjeta · Sin registro</span>
+        <h1>El software de presupuestos de obra <span class="accent">hecho en Perú</span>.</h1>
+        <p class="hero-sub">
+          Partidas, ACUs, metrados, cronograma Gantt, fórmula polinómica, índices INEI.
+          Compatible con Delphin Express, PowerCost y S10.
+          Reportes profesionales en PDF, Excel, Word, ODT y ODS.
+        </p>
+        <div class="hero-ctas">
+          <a href="#descargar" class="btn btn-primary btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            Descargar gratis
+          </a>
+          <a href="#features" class="btn btn-ghost btn-lg">Ver características</a>
+        </div>
+        <p class="hero-version">Última versión: <span id="latest-version">cargando…</span> · Windows · Linux</p>
+      </div>
+      <div class="hero-screenshot">
+        <div class="screenshot-frame">
+          <div class="screenshot-toolbar">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="screenshot-placeholder">
+            <img src="images/logo.svg" alt="" width="120" height="120" style="opacity:0.5">
+            <p style="margin-top:16px; color:#667885">Screenshot del proyecto</p>
+            <p style="font-size:12px; color:#95A3AB">(reemplazar con captura real)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section id="features" class="section section-light">
+    <div class="container">
+      <div class="section-head">
+        <h2>Todo lo que tu obra necesita</h2>
+        <p>Construido por un ingeniero peruano para ingenieros y constructoras peruanas.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <h3>Partidas con ACU</h3>
+          <p>Cuadrillas, rendimientos, insumos MO/MAT/EQ/SC con cálculo automático. Compatible con CAPECO y normas peruanas.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Cronograma Gantt</h3>
+          <p>CPM con ruta crítica, dependencias FS/SS/FF/SF, holguras, hitos, drag and drop. Export a MS Project.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📑</div>
+          <h3>Reportes profesionales</h3>
+          <p>11 tipos de reporte en PDF, Excel, Word, ODT y ODS. Pie tripartito con tu marca y logo de empresa.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3>Importadores nativos</h3>
+          <p>Lee directamente archivos .sqlite de Delphin Express, .prs de PowerCost, Excel de S10 e IFC de Revit/ArchiCAD.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>Curva S y valorizado</h3>
+          <p>Cronograma valorizado, adquisición de insumos por período, curva S de avance físico y financiero.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>Asistente IA Tuxia</h3>
+          <p>Detecta incoherencias, sugiere precios, redacta especificaciones técnicas. Soporta Anthropic, OpenAI, Gemini y Ollama local.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📐</div>
+          <h3>Fórmula polinómica</h3>
+          <p>Cálculo automático desde el ACU con monomios J/M/E. Integración con índices INEI mensuales por área.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💾</div>
+          <h3>Trabajá offline</h3>
+          <p>Tus datos viven en tu PC, no en la nube. SQLite local con backups automáticos. Sin internet salvo para IA.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPORTADORES ============ -->
+  <section id="importadores" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="badge">Migración sin dolor</span>
+        <h2>Importá desde el software que ya usás</h2>
+        <p>Trae todos tus proyectos existentes sin perder partidas, ACUs ni metrados.</p>
+      </div>
+      <div class="importers-grid">
+        <div class="importer-card">
+          <h3>Delphin Express</h3>
+          <ul>
+            <li>✓ Base nativa <code>.sqlite</code> (backup completo)</li>
+            <li>✓ Excel exportado</li>
+            <li>✓ Partidas, ACUs, metrados, índices INEI</li>
+          </ul>
+        </div>
+        <div class="importer-card">
+          <h3>PowerCost</h3>
+          <ul>
+            <li>✓ Base nativa <code>.prs</code> (Access)</li>
+            <li>✓ Excel exportado</li>
+            <li>✓ PDF (extracción inteligente)</li>
+          </ul>
+        </div>
+        <div class="importer-card">
+          <h3>S10</h3>
+          <ul>
+            <li>✓ Excel exportado (Presupuesto, ACUs, Insumos)</li>
+            <li>✓ Detección automática de columnas</li>
+            <li>✓ Mapeo INEI</li>
+          </ul>
+        </div>
+        <div class="importer-card">
+          <h3>BIM / IFC</h3>
+          <ul>
+            <li>✓ Archivos <code>.ifc</code> de Revit, ArchiCAD, Tekla</li>
+            <li>✓ Genera estructura jerárquica</li>
+            <li>✓ Acelera el armado del presupuesto</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DESCARGAR ============ -->
+  <section id="descargar" class="section section-orange">
+    <div class="container">
+      <div class="section-head">
+        <h2>Descargar IngePresupuestos</h2>
+        <p>Gratis por 30 días. Sin tarjeta de crédito, sin registro, sin pedir email.</p>
+      </div>
+      <div class="downloads-grid">
+        <a href="#" class="download-card" data-platform="windows" id="dl-win">
+          <div class="download-icon">🪟</div>
+          <h3>Windows</h3>
+          <p class="download-format">Instalador <code>.exe</code></p>
+          <p class="download-subtext">Windows 10/11 · ~120 MB</p>
+          <span class="download-btn">Descargar</span>
+        </a>
+        <a href="#" class="download-card" data-platform="linux" id="dl-linux">
+          <div class="download-icon">🐧</div>
+          <h3>Linux</h3>
+          <p class="download-format"><code>.AppImage</code></p>
+          <p class="download-subtext">Ubuntu, Mint, Fedora · ~100 MB</p>
+          <span class="download-btn">Descargar</span>
+        </a>
+      </div>
+      <p class="downloads-alt">
+        ¿Preferís versión portable? <a href="#" id="dl-win-zip">Windows ZIP</a> ·
+        <a href="#" id="dl-linux-tar">Linux tar.gz</a> ·
+        <a href="https://github.com/tuxiasumari/ingepresupuestos-pyside6/releases" target="_blank" rel="noopener">Ver todas las versiones en GitHub →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PRECIOS ============ -->
+  <section id="precios" class="section section-light">
+    <div class="container">
+      <div class="section-head">
+        <h2>Precios simples</h2>
+        <p>Pagás una sola vez. Sin suscripciones mensuales obligatorias.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Prueba</h3>
+          <div class="price"><span class="price-amount">Gratis</span><span class="price-period">30 días</span></div>
+          <ul class="pricing-features">
+            <li>✓ Todas las funcionalidades</li>
+            <li>✓ Reportes PDF · Excel · Word</li>
+            <li>✓ Cronograma Gantt + MS Project</li>
+            <li>✓ Importadores nativos</li>
+            <li>✓ Sin tarjeta, sin registro</li>
+            <li class="muted">Al vencer: PDF queda libre, exports editables piden licencia</li>
+          </ul>
+          <a href="#descargar" class="btn btn-ghost">Descargar</a>
+        </div>
+        <div class="pricing-card pricing-featured">
+          <span class="pricing-badge">Recomendado</span>
+          <h3>Perpetua</h3>
+          <div class="price"><span class="price-amount">$ <em>—</em></span><span class="price-period">único pago</span></div>
+          <ul class="pricing-features">
+            <li>✓ Licencia para siempre</li>
+            <li>✓ Bindada a 1 PC (con dualboot Linux+Win OK)</li>
+            <li>✓ Actualizaciones gratis por 2 años</li>
+            <li>✓ Todas las funcionalidades premium</li>
+            <li>✓ Soporte directo del autor</li>
+          </ul>
+          <a href="#contacto" class="btn btn-primary">Consultar precio</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Anual</h3>
+          <div class="price"><span class="price-amount">$ <em>—</em></span><span class="price-period">por año</span></div>
+          <ul class="pricing-features">
+            <li>✓ Vigencia 12 meses</li>
+            <li>✓ Bindada a 1 PC</li>
+            <li>✓ Todas las actualizaciones incluidas</li>
+            <li>✓ Todas las funcionalidades premium</li>
+            <li>✓ Soporte directo del autor</li>
+          </ul>
+          <a href="#contacto" class="btn btn-ghost">Consultar precio</a>
+        </div>
+      </div>
+      <p class="pricing-note">
+        Los precios concretos se publican cuando termine la fase beta.
+        Mientras tanto, contactanos directamente para una licencia anticipada
+        con descuento de pre-lanzamiento.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="section">
+    <div class="container container-narrow">
+      <div class="section-head">
+        <h2>Preguntas frecuentes</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>¿Cómo se instala en Windows?</summary>
+          <p>Descargá el archivo <code>ingepresupuestos-setup-v*.exe</code>. Doble click y seguí el asistente. Si Windows muestra "Windows protegió tu PC", hacé click en <strong>Más información</strong> → <strong>Ejecutar de todas formas</strong> — todavía no compramos certificado de firma digital (sale ~$300/año y lo dejamos para cuando salgamos de beta).</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cómo se instala en Linux?</summary>
+          <p>Descargá el <code>.AppImage</code>, dale permisos de ejecución (<code>chmod +x</code> o click derecho → Propiedades → Permisos) y doble click. No requiere instalación de sistema. Si preferís integración con el menú de aplicaciones, usá el <code>.tar.gz</code> con el script <code>install-linux.sh</code> incluido.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Funciona sin internet?</summary>
+          <p>Sí, completamente offline. Tus datos viven en tu PC (no en la nube), nunca se transmiten al autor. Lo único que requiere internet es: (a) chequear actualizaciones (opcional), (b) usar el asistente IA Tuxia con proveedores cloud — y para esto último podés usar Ollama localmente sin conexión.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué pasa si compro una licencia y cambio de PC?</summary>
+          <p>La licencia queda bindada a una máquina mediante un identificador de hardware. Si cambiás de PC (compra nueva, robo, daño irreparable), contactanos y te emitimos una clave nueva sin costo. Hay un límite razonable para evitar abusos (no podés migrar todos los meses).</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Mis proyectos quedan exportados a algún formato propietario?</summary>
+          <p>No. Tu base de datos es SQLite estándar — la podés abrir con cualquier herramienta. Los reportes salen en PDF, Excel, Word, ODT y ODS. No te ata a IngePresupuestos: si en el futuro querés migrar a otro software, exportás todo a Excel y listo.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Funciona con MS Project / Primavera P6?</summary>
+          <p>El cronograma Gantt se exporta a XML MSPDI, formato nativo de Microsoft Project. Para Primavera P6 podés abrir el MSPDI desde P6 (lo soporta nativamente).</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Lee mis archivos de Delphin Express / PowerCost / S10?</summary>
+          <p>Sí. Soportamos: bases nativas <code>.sqlite</code> de Delphin (con backup completo), bases <code>.prs</code> de PowerCost (Access), Excel exportado de los tres softwares, y PDF (PowerCost). La importación trae partidas, ACUs, metrados, índices INEI y precios.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cómo es el soporte?</summary>
+          <p>Directo del autor (Ing. Marco Sumari Tellez) por WhatsApp y email. Sin call centers, sin tickets, sin esperar 48 horas — respondés vos directamente.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Y si encuentro un bug o falta una funcionalidad?</summary>
+          <p>Escribinos por WhatsApp o email — leemos todo y priorizamos lo que la mayoría de usuarios pide. Para reportar issues técnicos podés también usar GitHub Issues.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER / CONTACTO ============ -->
+  <footer id="contacto" class="footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="IngePresupuestos" width="40" height="40">
+          <strong>IngePresupuestos</strong>
+        </div>
+        <p>Software para la elaboración de presupuestos de obra. Hecho en Perú.</p>
+        <p class="footer-copy">© 2026 Ing. Marco Sumari Tellez. Todos los derechos reservados.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="#features">Características</a></li>
+          <li><a href="#importadores">Importadores</a></li>
+          <li><a href="#precios">Precios</a></li>
+          <li><a href="#descargar">Descargar</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a href="https://github.com/tuxiasumari/ingepresupuestos-pyside6/releases" target="_blank" rel="noopener">Historial de versiones</a></li>
+          <li><a href="https://github.com/tuxiasumari/ingepresupuestos-pyside6/issues" target="_blank" rel="noopener">Reportar un bug</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:ing.sumari@gmail.com">ing.sumari@gmail.com</a></li>
+          <li><a href="https://wa.me/51998839090" target="_blank" rel="noopener">WhatsApp +51 998 839 090</a></li>
+          <li>Sumari · Arquitectura + Ingeniería</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

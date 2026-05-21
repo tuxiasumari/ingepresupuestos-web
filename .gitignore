@@ -1,0 +1,23 @@
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build artifacts (si en el futuro agregamos algún build)
+node_modules/
+dist/
+.cache/
+
+# Local testing
+.env.local
+*.log
+
+# Claude Code metadata
+.claude/
