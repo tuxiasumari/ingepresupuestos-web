@@ -276,48 +276,112 @@ code {
   .screenshot-frame { transform: none; }
 }
 
-/* ============ Showcase (galería de capturas) ============ */
-.showcase-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+/* ============ Carrusel (showcase de capturas) ============ */
+.carousel {
+  position: relative;
   max-width: 1100px;
   margin: 0 auto;
 }
-.showcase-item {
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;        /* IE/Edge */
+}
+.carousel-track::-webkit-scrollbar { display: none; }  /* Chromium/Safari */
+
+.carousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
   margin: 0;
   background: var(--white);
   border: 1px solid var(--silver-300);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.showcase-item:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-.showcase-item img {
+.carousel-slide img {
   display: block;
   width: 100%;
   height: auto;
   border-bottom: 1px solid var(--silver-300);
 }
-.showcase-item figcaption {
+.carousel-slide figcaption {
   padding: 18px 22px;
   font-size: 14px;
   color: var(--slate-700);
   line-height: 1.55;
 }
-.showcase-item figcaption strong {
+.carousel-slide figcaption strong {
   display: block;
   font-size: 16px;
   font-weight: 700;
   color: var(--slate-900);
   margin-bottom: 4px;
 }
+
+/* Botones prev/next */
+.carousel-btn {
+  position: absolute;
+  top: calc(50% - 35px);  /* centra sobre la imagen, no la card completa */
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--white);
+  color: var(--slate-900);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  font-size: 28px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 4px;  /* compensar el line-height del ‹/› */
+  z-index: 10;
+  transition: background 0.15s, transform 0.15s;
+}
+.carousel-btn:hover {
+  background: var(--brand);
+  color: var(--white);
+}
+.carousel-btn:active { transform: translateY(-50%) scale(0.95); }
+.carousel-prev { left: -22px; }
+.carousel-next { right: -22px; }
+
+/* Indicadores (dots) */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: var(--silver-300);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, width 0.25s ease, border-radius 0.25s ease;
+}
+.carousel-dot:hover { background: var(--slate-700); }
+.carousel-dot.active {
+  background: var(--brand);
+  width: 28px;
+  border-radius: 5px;
+}
+
 @media (max-width: 800px) {
-  .showcase-grid { grid-template-columns: 1fr; gap: 24px; }
+  .carousel-btn { display: none; }   /* en móvil sirve el swipe nativo */
+  .carousel-prev { left: 8px; }
+  .carousel-next { right: 8px; }
 }
 
 /* ============ Sections ============ */

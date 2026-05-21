@@ -140,50 +140,74 @@
     </div>
   </section>
 
-  <!-- ============ SHOWCASE ============ -->
+  <!-- ============ SHOWCASE / CARRUSEL ============ -->
   <section id="showcase" class="section">
     <div class="container">
       <div class="section-head">
+        <span class="badge">Multiplataforma</span>
         <h2>Mira la app en acción</h2>
-        <p>Cuatro de las pantallas que más vas a usar día a día.</p>
+        <p>Una sola app, idéntica en Windows y Linux. macOS próximamente.</p>
       </div>
-      <div class="showcase-grid">
-        <figure class="showcase-item">
-          <img src="images/screenshots/cronograma-gantt.jpg"
-               alt="Cronograma Gantt con CPM, dependencias FS/SS/FF/SF, holguras e hitos"
-               width="1600" height="860" loading="lazy">
-          <figcaption>
-            <strong>Cronograma Gantt</strong>
-            CPM con ruta crítica, dependencias gráficas, holguras y exportación a MS Project.
-          </figcaption>
-        </figure>
-        <figure class="showcase-item">
-          <img src="images/screenshots/proyecto-resumen.jpg"
-               alt="Vista Resumen del proyecto con distribución del costo directo en donut y top 5 partidas"
-               width="1600" height="860" loading="lazy">
-          <figcaption>
-            <strong>Resumen del proyecto</strong>
-            KPIs, distribución del costo directo en donut y ranking de partidas más costosas.
-          </figcaption>
-        </figure>
-        <figure class="showcase-item">
-          <img src="images/screenshots/centro-reportes.jpg"
-               alt="Centro de Reportes con preview de PDF y exports a Word, ODT, PNG y Excel"
-               width="1600" height="860" loading="lazy">
-          <figcaption>
-            <strong>Centro de Reportes</strong>
-            11 tipos de reporte profesionales en PDF, Excel, Word, ODT y ODS — con preview en vivo.
-          </figcaption>
-        </figure>
-        <figure class="showcase-item">
-          <img src="images/screenshots/importar-powercost.jpg"
-               alt="Diálogo de importación desde PowerCost, Delphin Express, S10, BIM/IFC e ingePresupuestos"
-               width="1600" height="860" loading="lazy">
-          <figcaption>
-            <strong>Importadores nativos</strong>
-            Lee directo .sqlite de Delphin, .prs de PowerCost, Excel de S10 e IFC de BIM.
-          </figcaption>
-        </figure>
+      <div class="carousel" id="showcase-carousel">
+        <button class="carousel-btn carousel-prev" aria-label="Captura anterior" type="button">‹</button>
+        <div class="carousel-track" role="region" aria-label="Galería de capturas de la app" aria-roledescription="carrusel">
+          <figure class="carousel-slide">
+            <img src="images/screenshots/dashboard-windows.jpg"
+                 alt="Dashboard de IngePresupuestos en Windows con 42 proyectos en modo mosaico"
+                 width="1600" height="900" loading="lazy">
+            <figcaption>
+              <strong>Dashboard en Windows</strong>
+              Tu portafolio completo de proyectos con filtros por estado, tipo y fecha.
+            </figcaption>
+          </figure>
+          <figure class="carousel-slide">
+            <img src="images/screenshots/dashboard-linux.jpg"
+                 alt="Mismo dashboard de IngePresupuestos corriendo en Linux Ubuntu"
+                 width="1600" height="1000" loading="lazy">
+            <figcaption>
+              <strong>Dashboard en Linux</strong>
+              Exactamente la misma app, exactamente las mismas funcionalidades. Sin emuladores.
+            </figcaption>
+          </figure>
+          <figure class="carousel-slide">
+            <img src="images/screenshots/cronograma-gantt.jpg"
+                 alt="Cronograma Gantt con CPM, dependencias FS/SS/FF/SF, holguras e hitos"
+                 width="1600" height="860" loading="lazy">
+            <figcaption>
+              <strong>Cronograma Gantt</strong>
+              CPM con ruta crítica, dependencias gráficas, holguras y exportación a MS Project.
+            </figcaption>
+          </figure>
+          <figure class="carousel-slide">
+            <img src="images/screenshots/proyecto-resumen.jpg"
+                 alt="Vista Resumen del proyecto con distribución del costo directo en donut y top 5 partidas"
+                 width="1600" height="860" loading="lazy">
+            <figcaption>
+              <strong>Resumen del proyecto</strong>
+              KPIs, distribución del costo directo en donut y ranking de partidas más costosas.
+            </figcaption>
+          </figure>
+          <figure class="carousel-slide">
+            <img src="images/screenshots/centro-reportes.jpg"
+                 alt="Centro de Reportes con preview de PDF y exports a Word, ODT, PNG y Excel"
+                 width="1600" height="860" loading="lazy">
+            <figcaption>
+              <strong>Centro de Reportes</strong>
+              11 tipos de reporte profesionales en PDF, Excel, Word, ODT y ODS — con preview en vivo.
+            </figcaption>
+          </figure>
+          <figure class="carousel-slide">
+            <img src="images/screenshots/importar-powercost.jpg"
+                 alt="Diálogo de importación desde PowerCost, Delphin Express, S10, BIM/IFC e ingePresupuestos"
+                 width="1600" height="860" loading="lazy">
+            <figcaption>
+              <strong>Importadores nativos</strong>
+              Lee directo .sqlite de Delphin, .prs de PowerCost, Excel de S10 e IFC de BIM.
+            </figcaption>
+          </figure>
+        </div>
+        <button class="carousel-btn carousel-next" aria-label="Captura siguiente" type="button">›</button>
+        <div class="carousel-dots" role="tablist" aria-label="Seleccionar captura"></div>
       </div>
     </div>
   </section>
