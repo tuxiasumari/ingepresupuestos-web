@@ -2,8 +2,9 @@
    IngePresupuestos — Landing JS (mínimo)
 
    Hace 2 cosas:
-   1. Consulta la API de GitHub Releases para mostrar la última versión
-      y poner los links de descarga apuntando a los assets correctos.
+   1. Consulta `version.json` en el CDN propio (Cloudflare R2 vía
+      downloads.ingepresupuestos.com) para mostrar la última versión
+      y poner los links de descarga apuntando a los binarios correctos.
    2. Smooth scroll para los anchors del menú (CSS scroll-behavior ya lo
       cubre pero se mantiene como fallback).
 
@@ -13,58 +14,54 @@
 (function () {
   'use strict';
 
-  // Repo del producto desde donde se descargan los binarios.
-  const REPO = 'tuxiasumari/ingepresupuestos-pyside6';
-  const RELEASES_API = `https://api.github.com/repos/${REPO}/releases/latest`;
-  const RELEASES_LATEST_PAGE = `https://github.com/${REPO}/releases/latest`;
+  // Endpoint propio servido desde Cloudflare R2 (bucket público vía custom domain).
+  const VERSION_URL = 'https://downloads.ingepresupuestos.com/version.json';
 
-  // Fallback al releases page si la API falla (rate limit, sin internet, etc.)
+  // Fallback si el fetch falla (offline, DNS, R2 caído, etc.).
   function setFallback() {
-    document.getElementById('latest-version').textContent = '— ver en GitHub';
+    document.getElementById('latest-version').textContent = '— no disponible';
+    const fallback = 'https://ingepresupuestos.com/#descargar';
     document.querySelectorAll('#dl-win, #dl-linux, #dl-win-zip, #dl-linux-tar')
-      .forEach(el => el.setAttribute('href', RELEASES_LATEST_PAGE));
+      .forEach(el => el.setAttribute('href', fallback));
   }
 
-  // Buscar entre los assets el primero que matchee un patrón
-  function findAsset(assets, regex) {
-    return assets.find(a => regex.test(a.name));
-  }
-
-  // ── Fetch a la API de GitHub ─────────────────────────────────────────
-  fetch(RELEASES_API, { headers: { 'Accept': 'application/vnd.github+json' } })
+  // ── Fetch al version.json en R2 ──────────────────────────────────────
+  // Cache-bust con timestamp para que un release nuevo se vea inmediatamente
+  // sin esperar al TTL del edge cache de Cloudflare.
+  fetch(`${VERSION_URL}?t=${Date.now()}`, { headers: { 'Accept': 'application/json' } })
     .then(resp => {
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       return resp.json();
     })
     .then(data => {
       // Versión visible en el hero
-      const tag = data.tag_name || '';
-      document.getElementById('latest-version').textContent = tag;
+      const version = data.version || '';
+      document.getElementById('latest-version').textContent = version ? `v${version}` : '—';
 
-      const assets = data.assets || [];
+      const dl = data.downloads || {};
 
-      // Map de cada botón al patrón de asset que tiene que matchear
+      // Map botón → key en version.json.downloads
       const map = [
-        ['dl-win',       /setup.*\.exe$/i],
-        ['dl-linux',     /\.AppImage$/i],
-        ['dl-win-zip',   /windows.*\.zip$/i],
-        ['dl-linux-tar', /linux.*\.tar\.gz$/i],
+        ['dl-win',       'windows_installer'],
+        ['dl-linux',     'linux_appimage'],
+        ['dl-win-zip',   'windows_portable'],
+        ['dl-linux-tar', 'linux_portable'],
       ];
 
-      map.forEach(([id, rx]) => {
+      map.forEach(([id, key]) => {
         const el = document.getElementById(id);
         if (!el) return;
-        const asset = findAsset(assets, rx);
-        if (asset) {
-          el.setAttribute('href', asset.browser_download_url);
+        const url = dl[key];
+        if (url) {
+          el.setAttribute('href', url);
         } else {
-          // Si ese asset no existe en este release, mandamos al releases page
-          el.setAttribute('href', RELEASES_LATEST_PAGE);
+          // Si esa variante no existe en este release, mandamos a la sección
+          el.setAttribute('href', '#descargar');
         }
       });
     })
     .catch(err => {
-      console.warn('No se pudo cargar la última versión desde GitHub:', err);
+      console.warn('No se pudo cargar version.json:', err);
       setFallback();
     });
 
