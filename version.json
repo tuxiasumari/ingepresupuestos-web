@@ -1,13 +1,13 @@
 {
-    "version": "2.3.4",
+    "version": "2.3.5",
     "release_date": "2026-05-26",
-    "changelog": "Fix importar .prs con contraseña + licencia dinámica en Acerca de.",
+    "changelog": "Importar .prs con contraseña (fallback automático), nombres de recursos completos, mensaje claro si falta LocalDB, licencia dinámica en Acerca de.",
     "minimum_version": null,
     "downloads": {
-        "windows_installer": "https://downloads.ingepresupuestos.com/v2.3.4/ingepresupuestos-setup-v2.3.4.exe",
-        "windows_portable": "https://downloads.ingepresupuestos.com/v2.3.4/ingepresupuestos-windows.zip",
-        "linux_appimage": "https://downloads.ingepresupuestos.com/v2.3.4/IngePresupuestos-2.3.4-x86_64.AppImage",
-        "linux_portable": "https://downloads.ingepresupuestos.com/v2.3.4/ingepresupuestos-linux.tar.gz"
+        "windows_installer": "https://downloads.ingepresupuestos.com/v2.3.5/ingepresupuestos-setup-v2.3.5.exe",
+        "windows_portable": "https://downloads.ingepresupuestos.com/v2.3.5/ingepresupuestos-windows.zip",
+        "linux_appimage": "https://downloads.ingepresupuestos.com/v2.3.5/IngePresupuestos-2.3.5-x86_64.AppImage",
+        "linux_portable": "https://downloads.ingepresupuestos.com/v2.3.5/ingepresupuestos-linux.tar.gz"
     },
     "ingeconverter": {
         "version": "0.2.4",
