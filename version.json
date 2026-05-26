@@ -1,7 +1,7 @@
 {
     "version": "2.3.5",
     "release_date": "2026-05-26",
-    "changelog": "Importar .prs con contraseña (fallback automático), nombres de recursos completos, mensaje claro si falta LocalDB, licencia dinámica en Acerca de.",
+    "changelog": "Novedades desde v2.2.1:\n\n- Importar .prs de PowerCost en Windows (con o sin contraseña)\n- Importar backups S10 (.S2K) via IngeConverter (descarga directa desde la app)\n- Administración de usuarios (crear, editar, activar/desactivar)\n- Configuración General: datos empresa, jornada, moneda, backups, ruta exportación\n- Idioma inglés parcial (~60%) seleccionable en Configuración\n- Accesibilidad: escala de texto + 22 atajos de teclado + Ctrl+N global\n- Formulario de contacto directo desde Acerca de\n- Licencia dinámica en Acerca de (muestra estado real)\n- Machine ID visible y copiable\n- Actualizaciones automáticas desde la app (servidor R2)\n- Instalador Windows con wizard español y Add/Remove Programs\n- AppImage Linux (ejecución en 1 click)\n- Pulido UI: topbars oscuros, Tuxia arrastrable, footers consistentes\n- Mensaje claro cuando falta SQL Server LocalDB para importar .S2K",
     "minimum_version": null,
     "downloads": {
         "windows_installer": "https://downloads.ingepresupuestos.com/v2.3.5/ingepresupuestos-setup-v2.3.5.exe",
