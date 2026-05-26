@@ -1,13 +1,13 @@
 {
-    "version": "2.3.5",
+    "version": "2.3.6",
     "release_date": "2026-05-26",
-    "changelog": "Novedades desde v2.2.1:\n\n- Importar .prs de PowerCost en Windows (con o sin contraseña)\n- Importar backups S10 (.S2K) via IngeConverter (descarga directa desde la app)\n- Administración de usuarios (crear, editar, activar/desactivar)\n- Configuración General: datos empresa, jornada, moneda, backups, ruta exportación\n- Idioma inglés parcial (~60%) seleccionable en Configuración\n- Accesibilidad: escala de texto + 22 atajos de teclado + Ctrl+N global\n- Formulario de contacto directo desde Acerca de\n- Licencia dinámica en Acerca de (muestra estado real)\n- Machine ID visible y copiable\n- Actualizaciones automáticas desde la app (servidor R2)\n- Instalador Windows con wizard español y Add/Remove Programs\n- AppImage Linux (ejecución en 1 click)\n- Pulido UI: topbars oscuros, Tuxia arrastrable, footers consistentes\n- Mensaje claro cuando falta SQL Server LocalDB para importar .S2K",
+    "changelog": "Novedades desde v2.2.1:\n\n- Importar .prs de PowerCost en Windows (con o sin contraseña)\n- Importar backups S10 (.S2K) via IngeConverter (descarga directa desde la app)\n- Administración de usuarios (crear, editar, activar/desactivar)\n- Configuración General: datos empresa, jornada, moneda, backups, ruta exportación\n- Idioma inglés parcial (~60%) seleccionable en Configuración\n- Accesibilidad: escala de texto + 22 atajos de teclado + Ctrl+N global\n- Formulario de contacto directo desde Acerca de\n- Licencia dinámica en Acerca de (muestra estado real)\n- Machine ID visible y copiable\n- Actualizaciones automáticas desde la app (servidor R2)\n- Instalador Windows con wizard español y Add/Remove Programs\n- AppImage Linux (ejecución en 1 click)\n- Pulido UI: topbars oscuros, Tuxia arrastrable, footers consistentes\n- Fix automático para SSDs NVMe en Windows 11 (sector size > 4KB)\n- Mensaje claro cuando falta SQL Server LocalDB para importar .S2K",
     "minimum_version": null,
     "downloads": {
-        "windows_installer": "https://downloads.ingepresupuestos.com/v2.3.5/ingepresupuestos-setup-v2.3.5.exe",
-        "windows_portable": "https://downloads.ingepresupuestos.com/v2.3.5/ingepresupuestos-windows.zip",
-        "linux_appimage": "https://downloads.ingepresupuestos.com/v2.3.5/IngePresupuestos-2.3.5-x86_64.AppImage",
-        "linux_portable": "https://downloads.ingepresupuestos.com/v2.3.5/ingepresupuestos-linux.tar.gz"
+        "windows_installer": "https://downloads.ingepresupuestos.com/v2.3.6/ingepresupuestos-setup-v2.3.6.exe",
+        "windows_portable": "https://downloads.ingepresupuestos.com/v2.3.6/ingepresupuestos-windows.zip",
+        "linux_appimage": "https://downloads.ingepresupuestos.com/v2.3.6/IngePresupuestos-2.3.6-x86_64.AppImage",
+        "linux_portable": "https://downloads.ingepresupuestos.com/v2.3.6/ingepresupuestos-linux.tar.gz"
     },
     "ingeconverter": {
         "version": "0.2.5",
