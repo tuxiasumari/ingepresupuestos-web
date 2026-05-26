@@ -10,11 +10,11 @@
         "linux_portable": "https://downloads.ingepresupuestos.com/v2.3.5/ingepresupuestos-linux.tar.gz"
     },
     "ingeconverter": {
-        "version": "0.2.4",
+        "version": "0.2.5",
         "downloads": {
-            "windows_installer": "https://downloads.ingepresupuestos.com/ingeconverter/v0.2.4/ingeconverter-setup-v0.2.4.exe",
-            "windows_portable": "https://downloads.ingepresupuestos.com/ingeconverter/v0.2.4/ingeconverter-windows.zip",
-            "linux_portable": "https://downloads.ingepresupuestos.com/ingeconverter/v0.2.4/ingeconverter-v0.2.4-linux-x86_64.tar.gz"
+            "windows_installer": "https://downloads.ingepresupuestos.com/ingeconverter/v0.2.5/ingeconverter-setup-v0.2.5.exe",
+            "windows_portable": "https://downloads.ingepresupuestos.com/ingeconverter/v0.2.5/ingeconverter-windows.zip",
+            "linux_portable": "https://downloads.ingepresupuestos.com/ingeconverter/v0.2.5/ingeconverter-v0.2.5-linux-x86_64.tar.gz"
         }
     },
     "download_url": "https://ingepresupuestos.com/#descargar"
