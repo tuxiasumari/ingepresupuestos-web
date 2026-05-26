@@ -85,23 +85,28 @@ ingepresupuestos-web/
 
 ---
 
-## Diseño actual (sesión 2026-05-25)
+## Diseño actual (sesión 2026-05-26)
 
 Inspirado en **elementary.io**: secciones alternadas con screenshot grande
 a un lado y texto al otro, mucho aire, tipografía grande.
 
 ```
 ┌─ Header sticky dark (slate-700, espejo del topbar de la app)
-│  Logo + nav links + botón "Descargar gratis" + hamburger mobile
+│  Logo + nav links + hamburger mobile (sin botón CTA en header)
 │
 ├─ Hero (centrado)
-│  Título + subtítulo + CTA + screenshot con sombra
+│  "El software de presupuestos de obra para que lo lleves a todos lados"
+│  Sub: "Multiplataforma. Offline. Formato abierto. Compatible con S10, Delphin y PowerCost."
+│  CTA: "Descargar IngePresupuestos" + versión
 │
 ├─ Feature 1: Multiplataforma (blanco)
 │  Texto izq │ Mini-carrusel Win/Linux der (prev/next buttons)
+│  "Otras plataformas próximamente" (visión: Android, iOS, Mac)
 │
 ├─ Feature 2: Centro de Reportes (gris, reverso)
 │  Screenshot izq │ Texto der
+│  11 tipos: presupuestos, ACU, metrados, insumos, specs, cronogramas
+│  Exporta a Excel, Word, MS Project, ODS, ODT
 │
 ├─ Feature 3: Tuxia IA (morado #7A36B1, con ícono Tuxia)
 │  Texto izq │ Screenshot der
@@ -115,11 +120,14 @@ a un lado y texto al otro, mucho aire, tipografía grande.
 ├─ Feature 6: Formato abierto SQLite (gris, reverso)
 │  Screenshot izq │ Texto der
 │
-├─ Impact: "Trabaja offline" (slate-900, texto centrado)
+├─ Impact: "Trabaja offline si quieres" (slate-900, texto centrado)
 │
 ├─ Descargar (gradiente naranja, cards Win/Linux)
+│  "Prueba completa por 30 días."
 │
-├─ Precios (gris, 3 cards: Gratis $0 / Perpetua $150 / Anual $30)
+├─ Licenciamiento (gris, 3 cards: Gratis $0 / Perpetua $150 / Anual $30)
+│  "Licenciamiento como debería ser — Elección sin compromiso"
+│  Botones "Comprar" → WhatsApp directo con mensaje pre-llenado
 │
 ├─ FAQ (blanco, 7 preguntas, acordeón <details>)
 │
@@ -166,7 +174,7 @@ python3 -m http.server 8765
 |----------|------------------|
 | **URL de descarga** | `script.js` consulta `downloads.ingepresupuestos.com/version.json` (Cloudflare R2). |
 | **Versión en hero** | Misma API de R2. Fallback: "— no disponible". |
-| **Precios** | Hardcoded en `index.html` (sección `#precios`). |
+| **Precios** | Hardcoded en `index.html` (sección `#precios`). Botones "Comprar" → WhatsApp directo (`wa.me/51998839090`) con mensaje pre-llenado por tipo de licencia. |
 | **Íconos** | `tuxia-icon.png` copiado de `resources/icons/elementary/24/tuxia.png` del producto. `ingeconverter-icon.png` copiado de `~/ingeconverter/resources/icons/ingeconverter_256.png`. Si se actualizan, sincronizar manualmente. |
 
 ---
