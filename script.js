@@ -32,6 +32,15 @@
         const el = document.getElementById(id);
         if (el) el.setAttribute('href', dl[key] || '#descargar');
       });
+      const ic = (data.ingeconverter || {}).downloads || {};
+      [
+        ['dl-ic-win',     'windows_installer'],
+        ['dl-ic-linux',   'linux_portable'],
+        ['dl-ic-win-zip', 'windows_portable'],
+      ].forEach(([id, key]) => {
+        const el = document.getElementById(id);
+        if (el) el.setAttribute('href', ic[key] || '#descargar');
+      });
     })
     .catch(() => setFallback());
 

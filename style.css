@@ -441,21 +441,32 @@ code {
   font-weight: 800; color: var(--white); margin-bottom: 10px;
 }
 .download-sub { font-size: 16px; color: rgba(255,255,255,0.9); margin-bottom: 40px; }
-.dl-grid {
-  display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 24px;
+.dl-row {
+  display: flex; justify-content: center; align-items: flex-start; gap: 32px; flex-wrap: wrap;
 }
+.dl-group { text-align: center; }
+.dl-group-label {
+  display: inline-block; font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.95);
+  letter-spacing: 0.02em; margin-bottom: 12px;
+}
+.dl-group-tag {
+  font-size: 10px; font-weight: 600; background: rgba(255,255,255,0.2);
+  padding: 2px 8px; border-radius: 20px; vertical-align: middle; text-transform: none;
+}
+.dl-group-cards { display: flex; gap: 10px; margin-bottom: 8px; }
+.dl-group-alt { font-size: 12px; color: rgba(255,255,255,0.7); }
+.dl-group-alt a { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }
+.dl-divider { width: 1px; background: rgba(255,255,255,0.2); align-self: stretch; margin: 24px 8px 0; }
 .dl-card {
   background: var(--white); color: var(--slate-700);
-  border-radius: var(--radius); padding: 28px 36px;
-  text-align: center; min-width: 200px;
+  border-radius: var(--radius); text-align: center;
   transition: all 0.2s; box-shadow: var(--shadow);
 }
 .dl-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-img); color: var(--slate-700); }
-.dl-card svg { color: var(--slate-500); margin-bottom: 10px; }
-.dl-card strong { display: block; font-size: 17px; color: var(--slate-900); margin-bottom: 2px; }
-.dl-card span { font-size: 12.5px; color: var(--slate-300); }
-.dl-alt { font-size: 13px; color: rgba(255,255,255,0.8); }
-.dl-alt a { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }
+.dl-card svg { color: var(--slate-500); margin-bottom: 6px; }
+.dl-card strong { display: block; font-size: 14px; color: var(--slate-900); margin-bottom: 1px; }
+.dl-card span { font-size: 11px; color: var(--slate-300); }
+.dl-card-compact { padding: 16px 28px; min-width: 120px; }
 
 /* ============ Generic section ============ */
 .section { padding: 90px 0; }
@@ -527,6 +538,8 @@ code {
 }
 @media (max-width: 760px) {
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px 16px; }
+  .dl-divider { display: none; }
+  .dl-row { gap: 24px; }
 }
 .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
 .footer-brand strong { color: var(--white); font-size: 16px; }
