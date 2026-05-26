@@ -1,0 +1,21 @@
+{
+    "version": "2.3.3",
+    "release_date": "2026-05-26",
+    "changelog": "Fix importar .prs PowerCost en Windows + descarga directa de IngeConverter desde la app.",
+    "minimum_version": null,
+    "downloads": {
+        "windows_installer": "https://downloads.ingepresupuestos.com/v2.3.3/ingepresupuestos-setup-v2.3.3.exe",
+        "windows_portable": "https://downloads.ingepresupuestos.com/v2.3.3/ingepresupuestos-windows.zip",
+        "linux_appimage": "https://downloads.ingepresupuestos.com/v2.3.3/IngePresupuestos-2.3.3-x86_64.AppImage",
+        "linux_portable": "https://downloads.ingepresupuestos.com/v2.3.3/ingepresupuestos-linux.tar.gz"
+    },
+    "ingeconverter": {
+        "version": "0.2.4",
+        "downloads": {
+            "windows_installer": "https://downloads.ingepresupuestos.com/ingeconverter/v0.2.4/ingeconverter-setup-v0.2.4.exe",
+            "windows_portable": "https://downloads.ingepresupuestos.com/ingeconverter/v0.2.4/ingeconverter-windows.zip",
+            "linux_portable": "https://downloads.ingepresupuestos.com/ingeconverter/v0.2.4/ingeconverter-v0.2.4-linux-x86_64.tar.gz"
+        }
+    },
+    "download_url": "https://ingepresupuestos.com/#descargar"
+}
