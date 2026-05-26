@@ -1,23 +1,12 @@
 /* ─────────────────────────────────────────────────────────────────────────
-   IngePresupuestos — Landing JS (mínimo)
-
-   Hace 2 cosas:
-   1. Consulta `version.json` en el CDN propio (Cloudflare R2 vía
-      downloads.ingepresupuestos.com) para mostrar la última versión
-      y poner los links de descarga apuntando a los binarios correctos.
-   2. Smooth scroll para los anchors del menú (CSS scroll-behavior ya lo
-      cubre pero se mantiene como fallback).
-
-   Sin frameworks. Sin dependencias. Sin build. Sin tracking.
+   IngePresupuestos — Landing JS
    ──────────────────────────────────────────────────────────────────────── */
 
 (function () {
   'use strict';
 
-  // Endpoint propio servido desde Cloudflare R2 (bucket público vía custom domain).
   const VERSION_URL = 'https://downloads.ingepresupuestos.com/version.json';
 
-  // Fallback si el fetch falla (offline, DNS, R2 caído, etc.).
   function setFallback() {
     document.getElementById('latest-version').textContent = '— no disponible';
     const fallback = 'https://ingepresupuestos.com/#descargar';
@@ -25,145 +14,78 @@
       .forEach(el => el.setAttribute('href', fallback));
   }
 
-  // ── Fetch al version.json en R2 ──────────────────────────────────────
-  // Cache-bust con timestamp para que un release nuevo se vea inmediatamente
-  // sin esperar al TTL del edge cache de Cloudflare.
   fetch(`${VERSION_URL}?t=${Date.now()}`, { headers: { 'Accept': 'application/json' } })
     .then(resp => {
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       return resp.json();
     })
     .then(data => {
-      // Versión visible en el hero
       const version = data.version || '';
       document.getElementById('latest-version').textContent = version ? `v${version}` : '—';
-
       const dl = data.downloads || {};
-
-      // Map botón → key en version.json.downloads
-      const map = [
+      [
         ['dl-win',       'windows_installer'],
         ['dl-linux',     'linux_appimage'],
         ['dl-win-zip',   'windows_portable'],
         ['dl-linux-tar', 'linux_portable'],
-      ];
-
-      map.forEach(([id, key]) => {
+      ].forEach(([id, key]) => {
         const el = document.getElementById(id);
-        if (!el) return;
-        const url = dl[key];
-        if (url) {
-          el.setAttribute('href', url);
-        } else {
-          // Si esa variante no existe en este release, mandamos a la sección
-          el.setAttribute('href', '#descargar');
-        }
+        if (el) el.setAttribute('href', dl[key] || '#descargar');
       });
     })
-    .catch(err => {
-      console.warn('No se pudo cargar version.json:', err);
-      setFallback();
-    });
+    .catch(() => setFallback());
 
-  // ── Smooth scroll fallback (CSS scroll-behavior ya cubre la mayoría) ─
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#' || targetId.length < 2) return;
-      const target = document.querySelector(targetId);
+      const id = this.getAttribute('href');
+      if (id === '#' || id.length < 2) return;
+      const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Update URL hash sin saltar
-      history.pushState(null, '', targetId);
+      history.pushState(null, '', id);
+      document.querySelector('.nav-links')?.classList.remove('open');
     });
   });
 
-  // ── Carrusel del showcase ────────────────────────────────────────────
-  // Scroll-snap + prev/next + dots + autoplay (pausa en hover).
-  // Una sola implementación reusable: `.carousel` con `.carousel-track`,
-  // `.carousel-slide`s, `.carousel-prev/next`, `.carousel-dots`.
-  document.querySelectorAll('.carousel').forEach(initCarousel);
-
-  function initCarousel(root) {
-    const track = root.querySelector('.carousel-track');
-    const slides = Array.from(track.querySelectorAll('.carousel-slide'));
-    const dotsBox = root.querySelector('.carousel-dots');
-    const prevBtn = root.querySelector('.carousel-prev');
-    const nextBtn = root.querySelector('.carousel-next');
-    if (slides.length < 2) return;
-
-    let current = 0;
-    let autoplayId = null;
-    const AUTOPLAY_MS = 6000;
-
-    // Crear dots
-    slides.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-      dot.type = 'button';
-      dot.setAttribute('aria-label', `Ir a captura ${i + 1} de ${slides.length}`);
-      dot.addEventListener('click', () => { resetAutoplay(); goTo(i); });
-      dotsBox.appendChild(dot);
-    });
-
-    function goTo(i) {
-      current = (i + slides.length) % slides.length;
-      track.scrollTo({ left: slides[current].offsetLeft, behavior: 'smooth' });
-      updateDots();
-    }
-
-    function updateDots() {
-      dotsBox.querySelectorAll('.carousel-dot').forEach((d, i) => {
-        d.classList.toggle('active', i === current);
-      });
-    }
-
-    // Sincronizar `current` cuando el usuario arrastra/swipea manualmente
-    let scrollDebounce;
-    track.addEventListener('scroll', () => {
-      clearTimeout(scrollDebounce);
-      scrollDebounce = setTimeout(() => {
-        const slideWidth = slides[0].getBoundingClientRect().width + 24; // + gap
-        const i = Math.round(track.scrollLeft / slideWidth);
-        if (i !== current && i >= 0 && i < slides.length) {
-          current = i;
-          updateDots();
-        }
-      }, 80);
-    });
-
-    prevBtn.addEventListener('click', () => { resetAutoplay(); goTo(current - 1); });
-    nextBtn.addEventListener('click', () => { resetAutoplay(); goTo(current + 1); });
-
-    // Teclado: ← →
-    root.setAttribute('tabindex', '0');
-    root.addEventListener('keydown', e => {
-      if (e.key === 'ArrowLeft')  { resetAutoplay(); goTo(current - 1); }
-      if (e.key === 'ArrowRight') { resetAutoplay(); goTo(current + 1); }
-    });
-
-    function startAutoplay() {
-      if (autoplayId) return;
-      autoplayId = setInterval(() => goTo(current + 1), AUTOPLAY_MS);
-    }
-    function stopAutoplay() {
-      if (autoplayId) { clearInterval(autoplayId); autoplayId = null; }
-    }
-    function resetAutoplay() {
-      stopAutoplay();
-      // Re-arrancar el autoplay un toque después de la interacción manual,
-      // así no compite con el click del usuario.
-      setTimeout(startAutoplay, 1500);
-    }
-
-    root.addEventListener('mouseenter', stopAutoplay);
-    root.addEventListener('mouseleave', startAutoplay);
-    // Pausar autoplay cuando la pestaña no está visible (cortesía con CPU)
-    document.addEventListener('visibilitychange', () => {
-      document.hidden ? stopAutoplay() : startAutoplay();
-    });
-
-    startAutoplay();
+  // Mobile toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  if (toggle && navLinks) {
+    toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
   }
+
+  // Scroll reveal (IntersectionObserver)
+  var reveals = document.querySelectorAll('.reveal');
+  if (reveals.length && 'IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    reveals.forEach(function (el) { obs.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  // Mini-carousels (prev/next horizontal scroll)
+  document.querySelectorAll('.mini-carousel').forEach(root => {
+    const track = root.querySelector('.mini-track');
+    const prev = root.querySelector('.mini-prev');
+    const next = root.querySelector('.mini-next');
+    if (!track) return;
+
+    function scrollBySlide(dir) {
+      const slideW = track.querySelector('.mini-slide').offsetWidth;
+      track.scrollBy({ left: dir * slideW, behavior: 'smooth' });
+    }
+
+    if (prev) prev.addEventListener('click', () => scrollBySlide(-1));
+    if (next) next.addEventListener('click', () => scrollBySlide(1));
+  });
+
 })();
