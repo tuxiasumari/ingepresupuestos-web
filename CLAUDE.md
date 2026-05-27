@@ -46,15 +46,23 @@ ingepresupuestos-web/
 │   ├── tuxia-icon.png      ← 620×783, ícono Tuxia (pingüino morado con casco AI)
 │   ├── ingeconverter-icon.png ← 256×256, ícono IngeConverter (pingüino S10)
 │   └── screenshots/
-│       ├── principal.png           ← 1920×1080, hero
-│       ├── dashboard-windows.jpg   ← 1600×900
-│       ├── dashboard-linux.jpg     ← 1600×1000
-│       ├── cronograma-gantt.jpg    ← 1600×860
-│       ├── proyecto-resumen.jpg    ← 1600×860
-│       ├── tuxia.png               ← 1920×1080
-│       ├── especificaciones.png    ← 1920×1080
-│       ├── centro-reportes.jpg     ← 1600×860
-│       ├── importar-powercost.jpg  ← 1600×860
+│       ├── principal.jpeg          ← 1600×966, hero (partidas + ACU + Tuxia)
+│       ├── dashboard-windows.jpeg  ← 1600×1000, dashboard mosaico Windows
+│       ├── dashboard-linux.jpeg    ← 1600×1000, dashboard mosaico Linux
+│       ├── centro-reportes.jpeg    ← 1600×966, resumen ejecutivo
+│       ├── tuxia.jpeg              ← 1600×964, revisor de proyecto con IA
+│       ├── cronograma-gantt.jpeg   ← 1600×966, diagrama Gantt CPM
+│       ├── importar-powercost.jpeg ← 1600×964, importar desde PowerCost
+│       ├── data-formato-abierto.jpeg ← 1600×966, pantalla Exportar
+│       ├── principal.png           ← (legacy, reemplazada por .jpeg)
+│       ├── dashboard-windows.jpg   ← (legacy)
+│       ├── dashboard-linux.jpg     ← (legacy)
+│       ├── cronograma-gantt.jpg    ← (legacy)
+│       ├── proyecto-resumen.jpg    ← (legacy, reemplazada por data-formato-abierto)
+│       ├── tuxia.png               ← (legacy)
+│       ├── especificaciones.png    ← (legacy)
+│       ├── centro-reportes.jpg     ← (legacy)
+│       ├── importar-powercost.jpg  ← (legacy)
 │       ├── proyecto-acu.jpg        ← (no usada aún)
 │       ├── proyecto-insumos.jpg    ← (no usada aún)
 │       ├── proyecto-metrados-tuxia.jpg ← (no usada aún)
@@ -183,7 +191,7 @@ python3 -m http.server 8765
 
 ### 🔴 Alta prioridad
 
-1. **Screenshots dedicados por sección** — las capturas actuales son genéricas. Idealmente una captura fresca de la v2.3 enfocada en lo que cada sección describe.
+1. ~~**Screenshots dedicados por sección**~~ — ✅ Completado 2026-05-26. 8 capturas frescas de v2.3 reemplazan las genéricas.
 2. **OG banner 1200×630** — para previews al compartir en WhatsApp/Twitter/LinkedIn.
 3. **Subir binarios v2.3.0 a R2** — para que los botones de descarga funcionen.
 
