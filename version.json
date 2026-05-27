@@ -1,20 +1,20 @@
 {
-    "version": "2.3.6",
-    "release_date": "2026-05-26",
-    "changelog": "Novedades desde v2.2.1:\n\n- Importar .prs de PowerCost en Windows (con o sin contraseña)\n- Importar backups S10 (.S2K) via IngeConverter (descarga directa desde la app)\n- Administración de usuarios (crear, editar, activar/desactivar)\n- Configuración General: datos empresa, jornada, moneda, backups, ruta exportación\n- Idioma inglés parcial (~60%) seleccionable en Configuración\n- Accesibilidad: escala de texto + 22 atajos de teclado + Ctrl+N global\n- Formulario de contacto directo desde Acerca de\n- Licencia dinámica en Acerca de (muestra estado real)\n- Machine ID visible y copiable\n- Actualizaciones automáticas desde la app (servidor R2)\n- Instalador Windows con wizard español y Add/Remove Programs\n- AppImage Linux (ejecución en 1 click)\n- Pulido UI: topbars oscuros, Tuxia arrastrable, footers consistentes\n- Fix automático para SSDs NVMe en Windows 11 (sector size > 4KB)\n- Mensaje claro cuando falta SQL Server LocalDB para importar .S2K",
+    "version": "2.3.10",
+    "release_date": "2026-05-27",
+    "changelog": "Novedades desde v2.2.1:\n\n⭐ Nuevas funcionalidades:\n- Importar .prs de PowerCost en Windows (con o sin contraseña interna)\n- Importar backups S10 (.S2K) vía IngeConverter (descarga directa desde la app)\n- Administración de usuarios en Configuración (crear, editar, activar/desactivar, eliminar)\n- Configuración General expandida: datos empresa/profesional, jornada, moneda, backups, ruta exportación\n- Idioma inglés parcial (~60%) seleccionable en Configuración → Idioma\n- Accesibilidad: escala de texto + 22 atajos de teclado documentados + Ctrl+N global\n- Formulario de contacto directo desde Acerca de (envío a soporte)\n- Machine ID visible y copiable en Acerca de\n- Actualizaciones automáticas detectadas desde la app\n\n🎨 Mejoras visuales:\n- Topbars oscuros consistentes en todas las vistas\n- Tuxia arrastrable (mover el asistente a cualquier posición)\n- Footers y headers de tablas unificados (ACU, Insumos, Metrados)\n- Columna Parcial sin símbolo de moneda\n- Botones toolbar reducidos a solo íconos con tooltips\n\n🔧 Correcciones importantes:\n- Machine ID estable entre Windows y Linux en la misma PC (licencia compartida dualboot)\n- Fix para SSDs NVMe en Windows 11 (sector size > 4KB con SQL Server LocalDB)\n- Importar .prs con contraseña interna de PowerCost (fallback automático)\n- Hint de reinicio tras instalar LocalDB para importar .S2K\n- Licencia dinámica en Acerca de (muestra estado real: trial/perpetua/anual)\n- Fix favoritos y estados del proyecto sincronizados entre vistas\n\n📦 Distribución:\n- Instalador Windows con wizard en español y Add/Remove Programs\n- AppImage Linux (ejecución en 1 click)\n- IngeConverter v0.2.6: timeout 90s para LocalDB + auto-repair de instancias corruptas",
     "minimum_version": null,
     "downloads": {
-        "windows_installer": "https://downloads.ingepresupuestos.com/v2.3.6/ingepresupuestos-setup-v2.3.6.exe",
-        "windows_portable": "https://downloads.ingepresupuestos.com/v2.3.6/ingepresupuestos-windows.zip",
-        "linux_appimage": "https://downloads.ingepresupuestos.com/v2.3.6/IngePresupuestos-2.3.6-x86_64.AppImage",
-        "linux_portable": "https://downloads.ingepresupuestos.com/v2.3.6/ingepresupuestos-linux.tar.gz"
+        "windows_installer": "https://downloads.ingepresupuestos.com/v2.3.10/ingepresupuestos-setup-v2.3.10.exe",
+        "windows_portable": "https://downloads.ingepresupuestos.com/v2.3.10/ingepresupuestos-windows.zip",
+        "linux_appimage": "https://downloads.ingepresupuestos.com/v2.3.10/IngePresupuestos-2.3.10-x86_64.AppImage",
+        "linux_portable": "https://downloads.ingepresupuestos.com/v2.3.10/ingepresupuestos-linux.tar.gz"
     },
     "ingeconverter": {
-        "version": "0.2.5",
+        "version": "0.2.6",
         "downloads": {
-            "windows_installer": "https://downloads.ingepresupuestos.com/ingeconverter/v0.2.5/ingeconverter-setup-v0.2.5.exe",
-            "windows_portable": "https://downloads.ingepresupuestos.com/ingeconverter/v0.2.5/ingeconverter-windows.zip",
-            "linux_portable": "https://downloads.ingepresupuestos.com/ingeconverter/v0.2.5/ingeconverter-v0.2.5-linux-x86_64.tar.gz"
+            "windows_installer": "https://downloads.ingepresupuestos.com/ingeconverter/v0.2.6/ingeconverter-setup-v0.2.6.exe",
+            "windows_portable": "https://downloads.ingepresupuestos.com/ingeconverter/v0.2.6/ingeconverter-windows.zip",
+            "linux_portable": "https://downloads.ingepresupuestos.com/ingeconverter/v0.2.6/ingeconverter-v0.2.6-linux-x86_64.tar.gz"
         }
     },
     "download_url": "https://ingepresupuestos.com/#descargar"
