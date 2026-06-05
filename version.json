@@ -1,13 +1,13 @@
 {
-    "version": "2.4.8",
-    "release_date": "2026-06-04",
-    "changelog": "Novedades desde v2.4.6:\n\n⭐ Nuevas funcionalidades:\n- Memoria Descriptiva: nueva pestaña en el proyecto que la redacta con IA a partir de tus datos (ubicación, presupuesto, plazo, modalidad y notas) y la podés editar con formato e imágenes. Sale como reporte propio en PDF, Word y ODT, y también dentro del Reporte Completo y de los packs Office / LibreOffice.\n- Mapa de ubicación: ubicá el proyecto sobre un mapa (con vista satelital) para fijar el punto exacto. Captura coordenadas en UTM WGS84 y altitud, que mejoran las memorias y especificaciones generadas con IA.\n- Autocompletado de Ubicación por UBIGEO (distrito / provincia / departamento del Perú).\n\n🔧 Mejoras:\n- Estados del proyecto: chip para cambiar el estado desde la vista del proyecto; en estados no editables (Aprobado / Ejecutado) el mensaje ahora te dice qué SÍ podés hacer, y se bloquea la edición de precios y de la Hoja de Metrados.\n- Hoja de Metrados con el mismo formato que el Presupuesto (títulos en rojo subrayados, colores por nivel) y todos los valores a 2 decimales.\n- Al importar de PowerCost / Delphin / S10 se reutiliza el insumo existente del catálogo en vez de duplicarlo (un solo «peón», un solo cemento, etc.).\n- Varios ajustes de interfaz (radios, calendario de «Costo al» más limpio, íconos).",
+    "version": "2.4.11",
+    "release_date": "2026-06-05",
+    "changelog": "Novedades desde v2.4.10:\n\n🔧 Importador de PowerCost (Excel):\n- La jerarquía de partidas (componentes, títulos y subpartidas) ahora se respeta correctamente al importar.\n- El análisis de costos unitarios (ACU) ya no duplica insumos: antes una partida podía absorber los insumos de sus sub-análisis (sub-partidas y detalles de insumo).\n- Ya no se importan filas que no son partidas, como el monto en letras («Son: …») ni el resumen (Costo Directo, Gastos Generales, IGV).\n\n🔔 Actualizaciones:\n- El aviso de nueva versión ahora aparece de forma confiable al abrir el programa, sin tener que buscarlo manualmente en «Acerca de».",
     "minimum_version": null,
     "downloads": {
-        "windows_installer": "https://downloads.ingepresupuestos.com/v2.4.8/ingepresupuestos-setup-v2.4.8.exe",
-        "windows_portable": "https://downloads.ingepresupuestos.com/v2.4.8/ingepresupuestos-windows.zip",
-        "linux_appimage": "https://downloads.ingepresupuestos.com/v2.4.8/IngePresupuestos-2.4.8-x86_64.AppImage",
-        "linux_portable": "https://downloads.ingepresupuestos.com/v2.4.8/ingepresupuestos-linux.tar.gz"
+        "windows_installer": "https://downloads.ingepresupuestos.com/v2.4.11/ingepresupuestos-setup-v2.4.11.exe",
+        "windows_portable": "https://downloads.ingepresupuestos.com/v2.4.11/ingepresupuestos-windows.zip",
+        "linux_appimage": "https://downloads.ingepresupuestos.com/v2.4.11/IngePresupuestos-2.4.11-x86_64.AppImage",
+        "linux_portable": "https://downloads.ingepresupuestos.com/v2.4.11/ingepresupuestos-linux.tar.gz"
     },
     "ingeconverter": {
         "version": "0.2.6",
