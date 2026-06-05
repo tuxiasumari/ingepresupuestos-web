@@ -81,20 +81,62 @@
     reveals.forEach(function (el) { el.classList.add('visible'); });
   }
 
-  // Mini-carousels (prev/next horizontal scroll)
+  // Mini-carousels (prev/next horizontal scroll, infinite wrap-around)
   document.querySelectorAll('.mini-carousel').forEach(root => {
     const track = root.querySelector('.mini-track');
     const prev = root.querySelector('.mini-prev');
     const next = root.querySelector('.mini-next');
     if (!track) return;
 
-    function scrollBySlide(dir) {
-      const slideW = track.querySelector('.mini-slide').offsetWidth;
-      track.scrollBy({ left: dir * slideW, behavior: 'smooth' });
+    function go(dir) {
+      const slides = track.querySelectorAll('.mini-slide');
+      const count = slides.length;
+      if (!count) return;
+      const slideW = slides[0].offsetWidth;
+      let idx = Math.round(track.scrollLeft / slideW);
+      idx = (idx + dir + count) % count;           // wrap around → infinito
+      track.scrollTo({ left: idx * slideW, behavior: 'smooth' });
     }
 
-    if (prev) prev.addEventListener('click', () => scrollBySlide(-1));
-    if (next) next.addEventListener('click', () => scrollBySlide(1));
+    if (prev) prev.addEventListener('click', () => go(-1));
+    if (next) next.addEventListener('click', () => go(1));
+  });
+
+  // ── Lightbox (ampliar imágenes) ───────────────────────────────────────
+  const lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.setAttribute('aria-hidden', 'true');
+  lb.innerHTML =
+    '<button class="lightbox-close" type="button" aria-label="Cerrar">×</button>' +
+    '<img alt="">';
+  document.body.appendChild(lb);
+  const lbImg = lb.querySelector('img');
+
+  function openLightbox(src, alt) {
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+
+  // Cualquier captura dentro de carruseles o feat-img es ampliable
+  document.querySelectorAll('.mini-slide img, .feat-img img').forEach(img => {
+    img.classList.add('zoomable');
+    img.addEventListener('click', () => openLightbox(img.currentSrc || img.src, img.alt));
+  });
+
+  lb.addEventListener('click', e => {
+    if (e.target === lb || e.target.classList.contains('lightbox-close')) closeLightbox();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();
   });
 
 })();

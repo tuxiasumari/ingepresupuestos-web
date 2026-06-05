@@ -21,3 +21,6 @@ dist/
 
 # Claude Code metadata
 .claude/
+
+# Capturas crudas (fuente) — la versión optimizada vive en images/screenshots/
+captura/
