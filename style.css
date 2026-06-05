@@ -358,6 +358,45 @@ code {
   .mini-next { right: 8px; }
 }
 
+/* Elabora tu presupuesto — full-width gallery carousel */
+.elabora {
+  background: var(--white);
+}
+.elabora-head {
+  max-width: 720px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+.elabora-head h2 {
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--slate-900);
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.elabora-head p {
+  font-size: 15.5px;
+  color: var(--slate-500);
+  line-height: 1.7;
+}
+.elabora-carousel .mini-slide figcaption {
+  text-align: left;
+  padding: 16px 22px;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--slate-500);
+  line-height: 1.55;
+  background: var(--silver-100);
+}
+.elabora-carousel .mini-slide figcaption strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--slate-900);
+  margin-bottom: 3px;
+}
+
 /* Tuxia / IA section — purple theme */
 .feat-tuxia {
   background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dk) 100%);
