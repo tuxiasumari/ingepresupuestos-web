@@ -41,6 +41,7 @@ ingepresupuestos-web/
 ├── script.js               ← fetch R2, smooth scroll, reveal, mini-carousel
 ├── images/
 │   ├── favicon.ico
+│   ├── og-banner.jpg       ← 1200×630, preview social (og:image / twitter:image)
 │   ├── logo.png            ← 256×256
 │   ├── logo.svg
 │   ├── tuxia-icon.png      ← 620×783, ícono Tuxia (pingüino morado con casco AI)
@@ -192,7 +193,7 @@ python3 -m http.server 8765
 ### 🔴 Alta prioridad
 
 1. ~~**Screenshots dedicados por sección**~~ — ✅ Completado 2026-05-26. 8 capturas frescas de v2.3 reemplazan las genéricas.
-2. **OG banner 1200×630** — para previews al compartir en WhatsApp/Twitter/LinkedIn.
+2. ~~**OG banner 1200×630**~~ — ✅ Completado 2026-06-11. `images/og-banner.jpg` (112 KB), compuesto con HTML + Chromium headless: fondo slate, logo, titular, línea naranja, captura principal.
 3. **Subir binarios v2.3.0 a R2** — para que los botones de descarga funcionen.
 
 ### 🟡 Media prioridad
