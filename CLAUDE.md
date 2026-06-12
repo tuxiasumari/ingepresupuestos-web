@@ -20,11 +20,20 @@ disparan builds del producto y viceversa.
   Cloudflare Pages en ~30 segundos tras `git push`.
 - **Tipografía**: Inter (Google Fonts vía CDN con preconnect). Misma que la
   app desktop para coherencia visual.
-- **`script.js`** (~70 líneas): consulta `version.json` en Cloudflare R2 para
-  versión + URLs de descarga. Smooth scroll. Mobile hamburger toggle.
-  Scroll reveal (IntersectionObserver). Mini-carousels con prev/next.
+- **`script.js`** (~170 líneas): consulta `version.json` en Cloudflare R2 para
+  versión + fecha de release + URLs de descarga. Precios geo (soles/dólares,
+  ver tabla de conexiones). Smooth scroll. Mobile hamburger toggle.
+  Scroll reveal (IntersectionObserver). Mini-carousels infinitos con prev/next.
+  Lightbox para ampliar capturas.
 - **Hosting**: Cloudflare Pages (free tier ilimitado para sitios estáticos).
 - **CDN + SSL**: Cloudflare (gratis, automático).
+- **SEO**: JSON-LD (SoftwareApplication + FAQPage) en el `<head>`, canonical,
+  OG + Twitter Cards (`images/og-banner.jpg`), `sitemap.xml`, `robots.txt`.
+  Registrado en Google Search Console (2026-06-11).
+- **Security headers** (`_headers` de Cloudflare Pages): CSP, HSTS, nosniff,
+  X-Frame-Options. ⚠️ La CSP es una lista blanca: si se agrega un script/CSS
+  externo nuevo, hay que sumar su dominio en `_headers` o quedará bloqueado.
+  Ya permitidos: Google Fonts, R2 (`downloads.`) y Cloudflare Insights.
 
 **No agregar build steps** (webpack, vite, etc.) salvo justificación muy
 fuerte. La simplicidad de "HTML que se sirve directo" es lo que mantiene
@@ -38,7 +47,11 @@ la velocidad y la facilidad de mantenimiento.
 ingepresupuestos-web/
 ├── index.html              ← página única
 ├── style.css               ← variables CSS centralizadas, paleta elementary
-├── script.js               ← fetch R2, smooth scroll, reveal, mini-carousel
+├── script.js               ← fetch R2, precios geo, reveal, carousels, lightbox
+├── _headers                ← security headers Cloudflare Pages (CSP, HSTS…)
+├── robots.txt
+├── sitemap.xml
+├── captura/                ← gitignored: capturas crudas (fuente)
 ├── images/
 │   ├── favicon.ico         ← multi-res 16–256
 │   ├── favicon-16.png / favicon-32.png / apple-touch-icon.png (180)
@@ -95,7 +108,7 @@ ingepresupuestos-web/
 
 ---
 
-## Diseño actual (sesión 2026-05-26)
+## Diseño actual (sesión 2026-05-26, actualizado 2026-06-11)
 
 Inspirado en **elementary.io**: secciones alternadas con screenshot grande
 a un lado y texto al otro, mucho aire, tipografía grande.
@@ -107,7 +120,7 @@ a un lado y texto al otro, mucho aire, tipografía grande.
 ├─ Hero (centrado)
 │  "El software de presupuestos de obra para que lo lleves a todos lados"
 │  Sub: "Multiplataforma. Offline. Formato abierto. Compatible con S10, Delphin y PowerCost."
-│  CTA: "Descargar IngePresupuestos" + versión
+│  CTA: "Descargar IngePresupuestos" + versión y fecha de release
 │
 ├─ Feature 1: Multiplataforma (blanco)
 │  Texto izq │ Mini-carrusel Win/Linux der (prev/next buttons)
@@ -142,7 +155,8 @@ a un lado y texto al otro, mucho aire, tipografía grande.
 │  "Licenciamiento como debería ser — Elección sin compromiso"
 │  Botones "Comprar" → WhatsApp directo con mensaje pre-llenado
 │
-├─ FAQ (blanco, 7 preguntas, acordeón <details>)
+├─ FAQ (blanco, 8 preguntas, acordeón <details>; espejadas en JSON-LD FAQPage —
+│  si se edita una pregunta, actualizar también el JSON-LD del <head>)
 │
 └─ Footer (slate-900, 4 cols: brand, producto, recursos, contacto)
 ```
@@ -198,7 +212,7 @@ python3 -m http.server 8765
 
 1. ~~**Screenshots dedicados por sección**~~ — ✅ Completado 2026-05-26. 8 capturas frescas de v2.3 reemplazan las genéricas.
 2. ~~**OG banner 1200×630**~~ — ✅ Completado 2026-06-11. `images/og-banner.jpg` (112 KB), compuesto con HTML + Chromium headless: fondo slate, logo, titular, línea naranja, captura principal.
-3. **Subir binarios v2.3.0 a R2** — para que los botones de descarga funcionen.
+3. ~~**Subir binarios a R2**~~ — ✅ Funcionando. R2 sirve los binarios de cada release (verificado con v2.4.14, 2026-06-11).
 
 ### 🟡 Media prioridad
 
@@ -207,8 +221,9 @@ python3 -m http.server 8765
 
 ### 🟢 Cuando llegue el momento
 
-6. **Testimoniales** de beta testers.
-7. **Analytics privacy-friendly** (Cloudflare Web Analytics — gratis, sin cookies).
+6. **Testimoniales** de beta testers — 2-3 frases con nombre y ciudad. El mayor hueco de confianza de la página (no hay prueba social).
+6b. **Sección "Quién lo hace"** — foto + 2 líneas de Marco. Humaniza la compra por WhatsApp.
+7. ~~**Analytics privacy-friendly**~~ — ✅ Completado 2026-06-11. Cloudflare Web Analytics activado por Marco (inyección automática, sin cookies). La CSP ya permite el beacon.
 8. ~~**`sitemap.xml`**~~ — ✅ Completado 2026-06-11 junto con robots.txt, canonical, Twitter Cards y JSON-LD (SoftwareApplication + FAQPage). Falta registrar en Google Search Console.
 9. **Página de IngeConverter** — sección o página dedicada al convertidor S10.
 
