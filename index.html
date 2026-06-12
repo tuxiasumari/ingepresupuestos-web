@@ -11,12 +11,23 @@
   <meta name="keywords" content="presupuesto obra, ACU, cronograma Gantt, Delphin Express, PowerCost, S10, INEI, CAPECO, ingeniería civil Perú, software construcción">
   <meta name="author" content="Ing. Marco Sumari">
 
+  <link rel="canonical" href="https://ingepresupuestos.com/">
+
+  <meta property="og:site_name" content="IngePresupuestos">
   <meta property="og:title" content="IngePresupuestos · Software para Presupuestos de Obra">
   <meta property="og:description" content="Multiplataforma, offline, formato abierto. Importa desde Delphin, PowerCost y S10. Reportes PDF gratis.">
-  <meta property="og:image" content="https://ingepresupuestos.com/images/og-banner.png">
-  <meta property="og:url" content="https://ingepresupuestos.com">
+  <!-- TODO: reemplazar por og-banner.png 1200×630 cuando exista -->
+  <meta property="og:image" content="https://ingepresupuestos.com/images/screenshots/principal.jpeg">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="966">
+  <meta property="og:url" content="https://ingepresupuestos.com/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_PE">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IngePresupuestos · Software para Presupuestos de Obra">
+  <meta name="twitter:description" content="Multiplataforma, offline, formato abierto. Importa desde Delphin, PowerCost y S10. Reportes PDF gratis.">
+  <meta name="twitter:image" content="https://ingepresupuestos.com/images/screenshots/principal.jpeg">
 
   <link rel="icon" href="images/favicon.ico" sizes="any">
   <link rel="icon" href="images/logo.png" type="image/png">
@@ -27,6 +38,121 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "IngePresupuestos",
+    "operatingSystem": "Windows, Linux",
+    "applicationCategory": "BusinessApplication",
+    "description": "Software de presupuestos de obra. Multiplataforma, offline, formato abierto SQLite. Importa desde Delphin, PowerCost y S10. Reportes PDF gratis.",
+    "url": "https://ingepresupuestos.com/",
+    "image": "https://ingepresupuestos.com/images/logo.png",
+    "author": {
+      "@type": "Person",
+      "name": "Ing. Marco Sumari",
+      "email": "ing.sumari@gmail.com"
+    },
+    "inLanguage": "es",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Gratis",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "App completa sin límite de proyectos, todos los reportes en PDF, importadores nativos. Sin tarjeta, sin registro."
+      },
+      {
+        "@type": "Offer",
+        "name": "Licencia Perpetua",
+        "price": "150",
+        "priceCurrency": "USD",
+        "description": "Pago único. Exportación a Excel, Word, ODS, ODT y MS Project. Updates gratis por 2 años."
+      },
+      {
+        "@type": "Offer",
+        "name": "Licencia Anual",
+        "price": "30",
+        "priceCurrency": "USD",
+        "description": "Vigencia 12 meses. Exportación a Excel, Word, ODS, ODT y MS Project. Todas las actualizaciones."
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Funciona sin internet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, completamente offline. Tus datos viven en tu PC en un archivo SQLite estándar. Lo único que usa internet es el asistente IA Tuxia (y puedes usar Ollama local sin conexión)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo abrir mi base de datos con otro programa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. El archivo .db es SQLite puro — ábrelo con DB Browser, DBeaver, Python o cualquier herramienta. No es formato propietario."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo importar mis archivos de S10?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Con IngeConverter (incluido gratis) conviertes bases .S2K, .bkf y .bak de S10. También soportamos Excel exportado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo se instala en Windows?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Descarga el .exe, doble click, sigue el asistente. Si sale \"Windows protegió tu PC\", click en Más información → Ejecutar de todas formas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo se instala en Linux?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Descarga el .AppImage, dale permisos de ejecución y doble click. No requiere instalación."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Funciona con MS Project?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El Gantt se exporta a XML MSPDI, un formato abierto. Lo abre Microsoft Project, pero también programas gratuitos como ProjectLibre, OpenProj y GanttProject. Primavera P6 también lo lee."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Necesito tener Office o MS Project instalado?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. IngePresupuestos genera los reportes en PDF, Excel y Word por sí solo, sin Microsoft Office. El cronograma se exporta a un XML estándar que abre en programas gratuitos como ProjectLibre, OpenProj o GanttProject. Solo la exportación a ODS / ODT se apoya en LibreOffice, si lo tienes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo es el soporte?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Por WhatsApp y email con respuesta en menos de 24 horas. También puedes escribir desde el formulario de contacto integrado en la app."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 

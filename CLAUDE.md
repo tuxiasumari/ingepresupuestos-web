@@ -204,7 +204,7 @@ python3 -m http.server 8765
 
 6. **Testimoniales** de beta testers.
 7. **Analytics privacy-friendly** (Cloudflare Web Analytics — gratis, sin cookies).
-8. **`sitemap.xml`** para Google Search Console.
+8. ~~**`sitemap.xml`**~~ — ✅ Completado 2026-06-11 junto con robots.txt, canonical, Twitter Cards y JSON-LD (SoftwareApplication + FAQPage). Falta registrar en Google Search Console.
 9. **Página de IngeConverter** — sección o página dedicada al convertidor S10.
 
 ---
