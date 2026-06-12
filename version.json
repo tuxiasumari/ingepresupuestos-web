@@ -1,13 +1,13 @@
 {
-    "version": "2.4.11",
-    "release_date": "2026-06-05",
-    "changelog": "Novedades desde v2.4.10:\n\n🔧 Importador de PowerCost (Excel):\n- La jerarquía de partidas (componentes, títulos y subpartidas) ahora se respeta correctamente al importar.\n- El análisis de costos unitarios (ACU) ya no duplica insumos: antes una partida podía absorber los insumos de sus sub-análisis (sub-partidas y detalles de insumo).\n- Ya no se importan filas que no son partidas, como el monto en letras («Son: …») ni el resumen (Costo Directo, Gastos Generales, IGV).\n\n🔔 Actualizaciones:\n- El aviso de nueva versión ahora aparece de forma confiable al abrir el programa, sin tener que buscarlo manualmente en «Acerca de».",
+    "version": "2.4.12",
+    "release_date": "2026-06-09",
+    "changelog": "Novedades desde v2.4.11:\n\n📚 Biblioteca de análisis (ACU):\n- Ampliada a más de 18.000 análisis de costos, incorporando bases reales de PowerCost y Delphin (verificadas: el costo unitario reconcilia y no hay recursos mal asignados).\n- Cada análisis trae su precio, así al insertar una partida el ACU llega completo.\n- Limpieza de la base de ejemplo: se corrigieron análisis con insumos duplicados o mal etiquetados.\n\n🔧 Cálculo de ACU:\n- Equipo por hora (hm): ahora funciona como la mano de obra — escribís la cuadrilla y la cantidad se calcula sola (cuadrilla / rendimiento × jornada).\n\n✨ Mejoras de uso:\n- Al abrir «Agregar partida» y «Agregar recurso», el cursor queda listo en el buscador.\n- Sin nada seleccionado, la nueva partida se agrega al final, bajo el último título.\n- Cerrá la pestaña de un proyecto con el botón central (rueda) del mouse.",
     "minimum_version": null,
     "downloads": {
-        "windows_installer": "https://downloads.ingepresupuestos.com/v2.4.11/ingepresupuestos-setup-v2.4.11.exe",
-        "windows_portable": "https://downloads.ingepresupuestos.com/v2.4.11/ingepresupuestos-windows.zip",
-        "linux_appimage": "https://downloads.ingepresupuestos.com/v2.4.11/IngePresupuestos-2.4.11-x86_64.AppImage",
-        "linux_portable": "https://downloads.ingepresupuestos.com/v2.4.11/ingepresupuestos-linux.tar.gz"
+        "windows_installer": "https://downloads.ingepresupuestos.com/v2.4.12/ingepresupuestos-setup-v2.4.12.exe",
+        "windows_portable": "https://downloads.ingepresupuestos.com/v2.4.12/ingepresupuestos-windows.zip",
+        "linux_appimage": "https://downloads.ingepresupuestos.com/v2.4.12/IngePresupuestos-2.4.12-x86_64.AppImage",
+        "linux_portable": "https://downloads.ingepresupuestos.com/v2.4.12/ingepresupuestos-linux.tar.gz"
     },
     "ingeconverter": {
         "version": "0.2.6",
