@@ -1,13 +1,13 @@
 {
-    "version": "2.4.12",
-    "release_date": "2026-06-09",
-    "changelog": "Novedades desde v2.4.11:\n\n📚 Biblioteca de análisis (ACU):\n- Ampliada a más de 18.000 análisis de costos, incorporando bases reales de PowerCost y Delphin (verificadas: el costo unitario reconcilia y no hay recursos mal asignados).\n- Cada análisis trae su precio, así al insertar una partida el ACU llega completo.\n- Limpieza de la base de ejemplo: se corrigieron análisis con insumos duplicados o mal etiquetados.\n\n🔧 Cálculo de ACU:\n- Equipo por hora (hm): ahora funciona como la mano de obra — escribís la cuadrilla y la cantidad se calcula sola (cuadrilla / rendimiento × jornada).\n\n✨ Mejoras de uso:\n- Al abrir «Agregar partida» y «Agregar recurso», el cursor queda listo en el buscador.\n- Sin nada seleccionado, la nueva partida se agrega al final, bajo el último título.\n- Cerrá la pestaña de un proyecto con el botón central (rueda) del mouse.",
+    "version": "2.4.14",
+    "release_date": "2026-06-11",
+    "changelog": "Novedades desde v2.4.12:\n\n📑 Reporte Completo configurable:\n- Elegí qué secciones incluir con casillas (ideal para presupuestos preliminares: solo Presupuesto, Insumos, ACU…). La numeración de secciones y páginas se adapta a lo seleccionado.\n- El encabezado de cada hoja ahora indica su sección (Presupuesto, ACU, Insumos…) para distinguirlas en documentos gruesos.\n- Ordená los reportes arrastrando las tarjetas: ese orden se aplica al documento. Todo se recuerda por proyecto.\n\n🔧 Cálculo de ACU:\n- Partidas globales (glb/est/serv): el ACU funciona como en PowerCost — cantidad y precio directos en todos los insumos, sin cuadrilla.\n- Mano de obra y equipo por día (día/jor): la cuadrilla calcula la cantidad sin multiplicar por la jornada (cantidad = cuadrilla / rendimiento).\n- Se muestra la unidad del rendimiento junto al campo (ej. m²/día).\n\n💲 Precios consistentes:\n- Un insumo = un precio por proyecto, también al agregar recursos del catálogo o pegar partidas/insumos: entran con el precio vigente del proyecto.\n\n🐧 Tuxia renovada:\n- Chat estilo terminal moderna, con el contexto (partida activa) en la barra de título.\n- Calculadora integrada visible: escribí 12.5*8+450 o usá el botón 🧮 Calc (/calc).\n- Botones de IA con respuestas directas y sin ruido en la conversación.\n- Los avisos flotantes solo aparecen con el chat minimizado.\n\n✨ Mejoras de uso:\n- Doble clic en un título o en la descripción de una partida abre su edición.\n- Importador PowerCost: corrige cantidades de mano de obra en partidas por día.",
     "minimum_version": null,
     "downloads": {
-        "windows_installer": "https://downloads.ingepresupuestos.com/v2.4.12/ingepresupuestos-setup-v2.4.12.exe",
-        "windows_portable": "https://downloads.ingepresupuestos.com/v2.4.12/ingepresupuestos-windows.zip",
-        "linux_appimage": "https://downloads.ingepresupuestos.com/v2.4.12/IngePresupuestos-2.4.12-x86_64.AppImage",
-        "linux_portable": "https://downloads.ingepresupuestos.com/v2.4.12/ingepresupuestos-linux.tar.gz"
+        "windows_installer": "https://downloads.ingepresupuestos.com/v2.4.14/ingepresupuestos-setup-v2.4.14.exe",
+        "windows_portable": "https://downloads.ingepresupuestos.com/v2.4.14/ingepresupuestos-windows.zip",
+        "linux_appimage": "https://downloads.ingepresupuestos.com/v2.4.14/IngePresupuestos-2.4.14-x86_64.AppImage",
+        "linux_portable": "https://downloads.ingepresupuestos.com/v2.4.14/ingepresupuestos-linux.tar.gz"
     },
     "ingeconverter": {
         "version": "0.2.6",
