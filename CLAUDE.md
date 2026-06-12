@@ -40,7 +40,8 @@ ingepresupuestos-web/
 ├── style.css               ← variables CSS centralizadas, paleta elementary
 ├── script.js               ← fetch R2, smooth scroll, reveal, mini-carousel
 ├── images/
-│   ├── favicon.ico
+│   ├── favicon.ico         ← multi-res 16–256
+│   ├── favicon-16.png / favicon-32.png / apple-touch-icon.png (180)
 │   ├── og-banner.jpg       ← 1200×630, preview social (og:image / twitter:image)
 │   ├── logo.png            ← 256×256
 │   ├── logo.svg
@@ -134,7 +135,10 @@ a un lado y texto al otro, mucho aire, tipografía grande.
 ├─ Descargar (gradiente naranja, cards Win/Linux)
 │  "Prueba completa por 30 días."
 │
-├─ Licenciamiento (gris, 3 cards: Gratis $0 / Perpetua $150 / Anual $30)
+├─ Comparativa (blanco, tabla "Compara y decide" vs S10/Delphin/PowerCost)
+│  Columna IngePresupuestos resaltada en naranja. Nota legal de marcas.
+│
+├─ Licenciamiento (gris, 3 cards: Gratis / Perpetua S/300≈$100 / Anual S/80≈$20, geo-swap)
 │  "Licenciamiento como debería ser — Elección sin compromiso"
 │  Botones "Comprar" → WhatsApp directo con mensaje pre-llenado
 │
@@ -183,7 +187,7 @@ python3 -m http.server 8765
 |----------|------------------|
 | **URL de descarga** | `script.js` consulta `downloads.ingepresupuestos.com/version.json` (Cloudflare R2). |
 | **Versión en hero** | Misma API de R2. Fallback: "— no disponible". |
-| **Precios** | Hardcoded en `index.html` (sección `#precios`). Botones "Comprar" → WhatsApp directo (`wa.me/51998839090`) con mensaje pre-llenado por tipo de licencia. |
+| **Precios** | Hardcoded en `index.html` (sección `#precios`) con atributos `data-pen`/`data-usd`: Perú ve soles (S/ 300 perpetua, S/ 80 anual), el resto dólares ($100, $20). Geodetección en `script.js` vía `/cdn-cgi/trace` de Cloudflare (mismo origen, sin cookies); fallback por zona horaria `America/Lima`. Botones "Comprar" → WhatsApp directo (`wa.me/51998839090`) con mensaje pre-llenado por tipo de licencia. |
 | **Íconos** | `tuxia-icon.png` copiado de `resources/icons/elementary/24/tuxia.png` del producto. `ingeconverter-icon.png` copiado de `~/ingeconverter/resources/icons/ingeconverter_256.png`. Si se actualizan, sincronizar manualmente. |
 
 ---
@@ -198,7 +202,7 @@ python3 -m http.server 8765
 
 ### 🟡 Media prioridad
 
-4. **Favicons en distintos tamaños** (16, 32, 180 apple-touch).
+4. ~~**Favicons en distintos tamaños**~~ — ✅ Completado 2026-06-11. `favicon-16.png`, `favicon-32.png`, `apple-touch-icon.png` (180). El `favicon.ico` original ya era multi-res (16–256), se conservó.
 5. **Video demo corto** (1-2 min) embebido en la landing o YouTube.
 
 ### 🟢 Cuando llegue el momento

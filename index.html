@@ -29,8 +29,9 @@
   <meta name="twitter:image" content="https://ingepresupuestos.com/images/og-banner.jpg">
 
   <link rel="icon" href="images/favicon.ico" sizes="any">
-  <link rel="icon" href="images/logo.png" type="image/png">
-  <link rel="apple-touch-icon" href="images/logo.png">
+  <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="images/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,16 +66,16 @@
       {
         "@type": "Offer",
         "name": "Licencia Perpetua",
-        "price": "150",
+        "price": "100",
         "priceCurrency": "USD",
-        "description": "Pago único. Exportación a Excel, Word, ODS, ODT y MS Project. Updates gratis por 2 años."
+        "description": "Pago único (S/ 300 en Perú). Exportación a Excel, Word, ODS, ODT y MS Project. Updates gratis por 2 años."
       },
       {
         "@type": "Offer",
         "name": "Licencia Anual",
-        "price": "30",
+        "price": "20",
         "priceCurrency": "USD",
-        "description": "Vigencia 12 meses. Exportación a Excel, Word, ODS, ODT y MS Project. Todas las actualizaciones."
+        "description": "Vigencia 12 meses (S/ 80 en Perú). Exportación a Excel, Word, ODS, ODT y MS Project. Todas las actualizaciones."
       }
     ]
   }
@@ -434,6 +435,81 @@
     </div>
   </section>
 
+  <!-- ============ COMPARATIVA ============ -->
+  <section id="comparativa" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Compara y decide</h2>
+        <p>IngePresupuestos frente a S10, Delphin Express y PowerCost.</p>
+      </div>
+      <div class="compare-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th scope="col">Característica</th>
+              <th scope="col" class="compare-hero">IngePresupuestos</th>
+              <th scope="col">S10</th>
+              <th scope="col">Delphin</th>
+              <th scope="col">PowerCost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Windows</th>
+              <td class="compare-hero"><span class="ck">✓</span></td>
+              <td><span class="ck">✓</span></td>
+              <td><span class="ck">✓</span></td>
+              <td><span class="ck">✓</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Linux</th>
+              <td class="compare-hero"><span class="ck">✓</span></td>
+              <td><span class="no">—</span></td>
+              <td><span class="no">—</span></td>
+              <td><span class="no">—</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Formato abierto (SQLite)</th>
+              <td class="compare-hero"><span class="ck">✓</span></td>
+              <td><span class="no">—</span></td>
+              <td><span class="no">—</span></td>
+              <td><span class="no">—</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Asistente IA integrado</th>
+              <td class="compare-hero"><span class="ck">✓</span></td>
+              <td><span class="no">—</span></td>
+              <td><span class="no">—</span></td>
+              <td><span class="no">—</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Importa proyectos de los demás</th>
+              <td class="compare-hero"><span class="ck">✓</span> S10 · Delphin · PowerCost</td>
+              <td><span class="no">—</span></td>
+              <td><span class="no">—</span></td>
+              <td><span class="no">—</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Versión gratuita con reportes PDF</th>
+              <td class="compare-hero"><span class="ck">✓</span> Sin límite de proyectos</td>
+              <td><span class="no">—</span></td>
+              <td><span class="no">—</span></td>
+              <td><span class="no">—</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Licencia completa</th>
+              <td class="compare-hero"><span data-pen="S/ 300" data-usd="$ 100">S/ 300</span> único pago</td>
+              <td>De pago</td>
+              <td>De pago</td>
+              <td>De pago</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="compare-note">Comparación referencial según información pública. S10, Delphin Express y PowerCost son marcas de sus respectivos propietarios.</p>
+    </div>
+  </section>
+
   <!-- ============ PRECIOS ============ -->
   <section id="precios" class="section bg-light">
     <div class="container">
@@ -444,7 +520,7 @@
       <div class="pricing-grid">
         <div class="pricing-card">
           <h3>Gratis</h3>
-          <div class="price"><span class="price-big">$ 0</span><span class="price-sub">para siempre</span></div>
+          <div class="price"><span class="price-big" data-pen="S/ 0" data-usd="$ 0">S/ 0</span><span class="price-sub">para siempre</span></div>
           <ul>
             <li>✓ App completa, sin límite de proyectos</li>
             <li>✓ Todos los reportes en PDF</li>
@@ -458,7 +534,7 @@
         <div class="pricing-card pricing-pop">
           <span class="pricing-badge">Recomendado</span>
           <h3>Perpetua</h3>
-          <div class="price"><span class="price-big">$ 150</span><span class="price-sub">único pago</span></div>
+          <div class="price"><span class="price-big" data-pen="S/ 300" data-usd="$ 100">S/ 300</span><span class="price-sub">único pago</span></div>
           <ul>
             <li>✓ Licencia para siempre</li>
             <li>✓ Excel · Word · ODS · ODT · MS Project</li>
@@ -470,7 +546,7 @@
         </div>
         <div class="pricing-card">
           <h3>Anual</h3>
-          <div class="price"><span class="price-big">$ 30</span><span class="price-sub">por año</span></div>
+          <div class="price"><span class="price-big" data-pen="S/ 80" data-usd="$ 20">S/ 80</span><span class="price-sub">por año</span></div>
           <ul>
             <li>✓ Vigencia 12 meses</li>
             <li>✓ Excel · Word · ODS · ODT · MS Project</li>

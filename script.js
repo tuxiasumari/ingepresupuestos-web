@@ -21,7 +21,14 @@
     })
     .then(data => {
       const version = data.version || '';
-      document.getElementById('latest-version').textContent = version ? `v${version}` : '—';
+      let label = version ? `v${version}` : '—';
+      if (version && data.release_date) {
+        const d = new Date(`${data.release_date}T00:00:00`);
+        if (!isNaN(d)) {
+          label += ` · ${d.toLocaleDateString('es', { day: 'numeric', month: 'short', year: 'numeric' })}`;
+        }
+      }
+      document.getElementById('latest-version').textContent = label;
       const dl = data.downloads || {};
       [
         ['dl-win',       'windows_installer'],
@@ -43,6 +50,27 @@
       });
     })
     .catch(() => setFallback());
+
+  // Precios según ubicación: soles en Perú (default), dólares fuera.
+  // /cdn-cgi/trace es de Cloudflare, mismo origen, sin cookies. Fallback: zona horaria.
+  function applyCurrency(curr) {
+    document.querySelectorAll('[data-pen]').forEach(el => {
+      el.textContent = curr === 'PEN' ? el.dataset.pen : el.dataset.usd;
+    });
+  }
+  fetch('/cdn-cgi/trace')
+    .then(resp => {
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      return resp.text();
+    })
+    .then(text => {
+      const loc = (text.match(/^loc=(\w+)$/m) || [])[1];
+      applyCurrency(loc === 'PE' ? 'PEN' : 'USD');
+    })
+    .catch(() => {
+      const tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '');
+      applyCurrency(tz === 'America/Lima' ? 'PEN' : 'USD');
+    });
 
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(link => {
