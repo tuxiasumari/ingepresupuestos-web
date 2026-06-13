@@ -1,13 +1,13 @@
 {
-    "version": "2.4.14",
-    "release_date": "2026-06-11",
-    "changelog": "Novedades desde v2.4.12:\n\n📑 Reporte Completo configurable:\n- Elegí qué secciones incluir con casillas (ideal para presupuestos preliminares: solo Presupuesto, Insumos, ACU…). La numeración de secciones y páginas se adapta a lo seleccionado.\n- El encabezado de cada hoja ahora indica su sección (Presupuesto, ACU, Insumos…) para distinguirlas en documentos gruesos.\n- Ordená los reportes arrastrando las tarjetas: ese orden se aplica al documento. Todo se recuerda por proyecto.\n\n🔧 Cálculo de ACU:\n- Partidas globales (glb/est/serv): el ACU funciona como en PowerCost — cantidad y precio directos en todos los insumos, sin cuadrilla.\n- Mano de obra y equipo por día (día/jor): la cuadrilla calcula la cantidad sin multiplicar por la jornada (cantidad = cuadrilla / rendimiento).\n- Se muestra la unidad del rendimiento junto al campo (ej. m²/día).\n\n💲 Precios consistentes:\n- Un insumo = un precio por proyecto, también al agregar recursos del catálogo o pegar partidas/insumos: entran con el precio vigente del proyecto.\n\n🐧 Tuxia renovada:\n- Chat estilo terminal moderna, con el contexto (partida activa) en la barra de título.\n- Calculadora integrada visible: escribí 12.5*8+450 o usá el botón 🧮 Calc (/calc).\n- Botones de IA con respuestas directas y sin ruido en la conversación.\n- Los avisos flotantes solo aparecen con el chat minimizado.\n\n✨ Mejoras de uso:\n- Doble clic en un título o en la descripción de una partida abre su edición.\n- Importador PowerCost: corrige cantidades de mano de obra en partidas por día.",
+    "version": "2.4.16",
+    "release_date": "2026-06-12",
+    "changelog": "Novedades desde v2.4.14:\n\n⚡ Rendimiento:\n- Inicio instantáneo incluso con cientos de proyectos: el mosaico se dibuja al vuelo y los totales se calculan en segundo plano.\n- Abrir un proyecto pasó de ~2 s a ~0,6 s.\n- El mosaico se ajusta al ancho de la ventana, sin tarjetas recortadas.\n\n📐 Precisión decimal configurable:\n- Definí los decimales por separado para montos, metrados y cantidades de ACU (estilo «Datos Adicionales» de S10).\n\n🔍 Detector «PU ≠ ACU»:\n- Nuevo botón en Insumos que detecta partidas cuyo precio unitario no coincide con su análisis, mostrando el impacto en el Costo Directo antes de corregir.\n\n🧱 Agregar partida más clara:\n- Previsualización del ACU en el panel lateral: hacé clic en una partida para verla antes de agregarla.\n\n💾 Exportar e importar:\n- Exportá cualquier proyecto a un archivo .db desde el menú de la tarjeta en Inicio.\n- Importador PowerCost (.prs): numeración jerárquica de ítems (01, 01.01, 02…), mejor manejo de sub-análisis y equipo por día.\n\n✨ Mejoras de uso:\n- Subir / bajar nivel respeta la selección múltiple.\n- Biblioteca y proyectos de ejemplo renovados, depurados y consistentes.",
     "minimum_version": null,
     "downloads": {
-        "windows_installer": "https://downloads.ingepresupuestos.com/v2.4.14/ingepresupuestos-setup-v2.4.14.exe",
-        "windows_portable": "https://downloads.ingepresupuestos.com/v2.4.14/ingepresupuestos-windows.zip",
-        "linux_appimage": "https://downloads.ingepresupuestos.com/v2.4.14/IngePresupuestos-2.4.14-x86_64.AppImage",
-        "linux_portable": "https://downloads.ingepresupuestos.com/v2.4.14/ingepresupuestos-linux.tar.gz"
+        "windows_installer": "https://downloads.ingepresupuestos.com/v2.4.16/ingepresupuestos-setup-v2.4.16.exe",
+        "windows_portable": "https://downloads.ingepresupuestos.com/v2.4.16/ingepresupuestos-windows.zip",
+        "linux_appimage": "https://downloads.ingepresupuestos.com/v2.4.16/IngePresupuestos-2.4.16-x86_64.AppImage",
+        "linux_portable": "https://downloads.ingepresupuestos.com/v2.4.16/ingepresupuestos-linux.tar.gz"
     },
     "ingeconverter": {
         "version": "0.2.6",
