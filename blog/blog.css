@@ -1,0 +1,234 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   IngePresupuestos — Blog
+   Hereda los tokens y el header/footer de ../style.css.
+   Aquí solo van los estilos propios del listado y del artículo.
+   ──────────────────────────────────────────────────────────────────────── */
+
+/* ============ Cabecera del blog ============ */
+.blog-head {
+  background: var(--silver-100);
+  border-bottom: 1px solid var(--silver-300);
+  padding: 56px 0 48px;
+  text-align: center;
+}
+.blog-head h1 {
+  font-size: 2.2rem;
+  line-height: 1.15;
+  color: var(--slate-900);
+  margin-bottom: 12px;
+}
+.blog-head p {
+  color: var(--slate-500);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* Migas de pan */
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--slate-300);
+  margin-bottom: 24px;
+}
+.breadcrumb a { color: var(--slate-500); }
+.breadcrumb a:hover { color: var(--orange); }
+.breadcrumb span { margin: 0 6px; }
+
+/* ============ Listado de artículos ============ */
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+  padding: 56px 0 72px;
+}
+.post-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--silver-300);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-img);
+}
+.post-card a { color: inherit; }
+.post-card-img {
+  aspect-ratio: 16 / 9;
+  background: var(--silver-100);
+  object-fit: cover;
+  width: 100%;
+}
+.post-card-body { padding: 22px 24px 26px; display: flex; flex-direction: column; flex: 1; }
+.post-card .tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--orange-dk);
+  background: var(--orange-soft);
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-bottom: 12px;
+}
+.post-card h2 {
+  font-size: 1.18rem;
+  line-height: 1.3;
+  color: var(--slate-900);
+  margin-bottom: 10px;
+}
+.post-card:hover h2 { color: var(--orange-dk); }
+.post-card p { color: var(--slate-500); font-size: 0.95rem; margin-bottom: 16px; }
+.post-card .post-meta { margin-top: auto; font-size: 0.82rem; color: var(--slate-300); }
+
+.blog-empty {
+  text-align: center;
+  color: var(--slate-300);
+  padding: 40px 0;
+}
+
+/* ============ Artículo ============ */
+.article {
+  padding: 48px 0 64px;
+}
+.article-header { margin-bottom: 36px; }
+.article-header .tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--orange-dk);
+  background: var(--orange-soft);
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+.article-header h1 {
+  font-size: 2.3rem;
+  line-height: 1.18;
+  color: var(--slate-900);
+  margin-bottom: 16px;
+}
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--slate-300);
+}
+.article-meta strong { color: var(--slate-500); font-weight: 600; }
+
+.article-cover {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-img);
+  margin: 8px 0 40px;
+}
+
+/* Cuerpo del artículo: tipografía legible */
+.article-body { font-size: 1.06rem; line-height: 1.75; color: var(--slate-700); }
+.article-body > * + * { margin-top: 1.1em; }
+.article-body h2 {
+  font-size: 1.6rem;
+  line-height: 1.25;
+  color: var(--slate-900);
+  margin-top: 2em;
+  padding-top: 0.2em;
+}
+.article-body h3 {
+  font-size: 1.25rem;
+  color: var(--slate-900);
+  margin-top: 1.6em;
+}
+.article-body ul, .article-body ol { padding-left: 1.4em; }
+.article-body ul { list-style: disc; }
+.article-body ol { list-style: decimal; }
+.article-body li { margin-top: 0.4em; }
+.article-body a { color: var(--orange); text-decoration: underline; }
+.article-body a:hover { color: var(--orange-dk); }
+.article-body strong { color: var(--slate-900); }
+.article-body img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-img);
+  margin: 1.6em 0 0.6em;
+}
+.article-body figcaption {
+  font-size: 0.85rem;
+  color: var(--slate-300);
+  text-align: center;
+  margin-top: 0;
+}
+.article-body blockquote {
+  border-left: 4px solid var(--orange);
+  background: var(--orange-soft);
+  padding: 14px 20px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--slate-700);
+  font-style: italic;
+}
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.article-body th, .article-body td {
+  border: 1px solid var(--silver-300);
+  padding: 8px 12px;
+  text-align: left;
+}
+.article-body th { background: var(--silver-100); color: var(--slate-900); }
+
+/* Caja CTA dentro/al final del artículo */
+.article-cta {
+  margin: 48px 0 8px;
+  background: var(--slate-900);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 36px 40px;
+  text-align: center;
+}
+.article-cta h3 { color: var(--white); font-size: 1.4rem; margin-bottom: 10px; }
+.article-cta p { color: #C7D2DD; margin-bottom: 22px; max-width: 540px; margin-left: auto; margin-right: auto; }
+
+/* Caja de autor */
+.author-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 44px;
+  padding-top: 28px;
+  border-top: 1px solid var(--silver-300);
+}
+.author-box img { width: 56px; height: 56px; border-radius: 50%; }
+.author-box .author-name { font-weight: 700; color: var(--slate-900); }
+.author-box .author-role { font-size: 0.9rem; color: var(--slate-300); }
+
+/* FAQ del artículo */
+.article-faq { margin-top: 48px; }
+.article-faq h2 { font-size: 1.6rem; color: var(--slate-900); margin-bottom: 16px; }
+.article-faq details {
+  border: 1px solid var(--silver-300);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  margin-top: 10px;
+}
+.article-faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--slate-900);
+}
+.article-faq details[open] summary { margin-bottom: 8px; }
+.article-faq p { color: var(--slate-500); }
+
+.article-back { margin-top: 40px; }
+
+@media (max-width: 640px) {
+  .article-header h1 { font-size: 1.7rem; }
+  .article-body h2 { font-size: 1.35rem; }
+  .article-cta { padding: 28px 22px; }
+  .blog-head h1 { font-size: 1.7rem; }
+}
