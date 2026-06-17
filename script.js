@@ -167,4 +167,16 @@
     if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();
   });
 
+  // Copiar comando winget
+  document.querySelectorAll('.dl-winget-copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      navigator.clipboard.writeText(btn.dataset.copy).then(function () {
+        var prev = btn.textContent;
+        btn.textContent = '¡Copiado!';
+        btn.classList.add('copied');
+        setTimeout(function () { btn.textContent = prev; btn.classList.remove('copied'); }, 1600);
+      });
+    });
+  });
+
 })();

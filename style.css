@@ -539,7 +539,7 @@ code {
 }
 .download-sub { font-size: 16px; color: rgba(255,255,255,0.9); margin-bottom: 40px; }
 .dl-row {
-  display: flex; justify-content: center; align-items: flex-start; gap: 32px; flex-wrap: wrap;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
 }
 .dl-group { text-align: center; }
 .dl-group-label {
@@ -550,10 +550,13 @@ code {
   font-size: 10px; font-weight: 600; background: rgba(255,255,255,0.2);
   padding: 2px 8px; border-radius: 20px; vertical-align: middle; text-transform: none;
 }
-.dl-group-cards { display: flex; gap: 10px; margin-bottom: 8px; }
+.dl-group-cards { display: flex; gap: 10px; margin-bottom: 8px; justify-content: center; flex-wrap: wrap; align-items: flex-start; }
 .dl-group-alt { font-size: 12px; color: rgba(255,255,255,0.7); }
 .dl-group-alt a { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }
-.dl-divider { width: 1px; background: rgba(255,255,255,0.2); align-self: stretch; margin: 24px 8px 0; }
+.dl-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.dl-portable { font-size: 12px; color: rgba(255,255,255,0.72); text-decoration: none; }
+.dl-portable:hover { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }
+.dl-divider { height: 1px; width: 100%; max-width: 340px; background: rgba(255,255,255,0.18); margin: 22px auto 8px; }
 .dl-card {
   background: var(--white); color: var(--slate-700);
   border-radius: var(--radius); text-align: center;
@@ -693,3 +696,22 @@ code {
 @media print {
   .nav, .hero-ctas, .download-section, .footer { display: none; }
 }
+
+/* ── Canales alternativos de instalación (Store / Winget) ── */
+.dl-channels        { margin-top: 28px; text-align: center; }
+.dl-channels-label  { display: block; font-size: 13px; letter-spacing: .05em;
+                      text-transform: uppercase; color: var(--slate-300); margin-bottom: 12px; }
+.dl-channels-row    { display: flex; gap: 14px; justify-content: center;
+                      flex-wrap: wrap; align-items: center; }
+.dl-winget          { display: flex; align-items: center; gap: 8px;
+                      width: fit-content; margin: 4px auto 8px;
+                      background: var(--slate-900);
+                      border: 1px solid rgba(255,255,255,.12); border-radius: 10px;
+                      padding: 9px 10px 9px 14px; }
+.dl-winget code     { color: #e2e8f0; font-family: ui-monospace, Menlo, Consolas, monospace;
+                      font-size: 14px; white-space: nowrap;
+                      background: transparent; padding: 0; border-radius: 0; }
+.dl-winget-copy     { background: var(--orange); color: #fff; border: 0; border-radius: 7px;
+                      padding: 6px 12px; font-size: 13px; font-weight: 600; cursor: pointer; }
+.dl-winget-copy:hover  { filter: brightness(1.06); }
+.dl-winget-copy.copied { background: #27AE60; }
