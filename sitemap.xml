@@ -12,6 +12,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://ingepresupuestos.com/blog/que-es-ingepresupuestos.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- Añade aquí cada artículo nuevo del blog:
   <url>
     <loc>https://ingepresupuestos.com/blog/tu-slug.html</loc>
