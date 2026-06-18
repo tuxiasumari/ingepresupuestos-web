@@ -52,6 +52,12 @@ ingepresupuestos-web/
 ├── robots.txt
 ├── sitemap.xml
 ├── captura/                ← gitignored: capturas crudas (fuente)
+├── blog/
+│   ├── index.html          ← listado de posts (tarjetas post-card)
+│   ├── blog.css            ← estilos del blog (artículo, lightbox, share-bar)
+│   ├── blog.js             ← menú móvil + lightbox/zoom + botón «Copiar enlace»
+│   ├── articulo-template.html ← plantilla para nuevos posts
+│   └── que-es-ingepresupuestos.html ← 1er post (historia de origen)
 ├── images/
 │   ├── favicon.ico         ← multi-res 16–256
 │   ├── favicon-16.png / favicon-32.png / apple-touch-icon.png (180)
@@ -83,6 +89,11 @@ ingepresupuestos-web/
 │       ├── proyecto-metrados-tuxia.jpg ← (no usada aún)
 │       ├── proyecto-especificaciones.jpg ← (no usada aún)
 │       └── config-ia-linux.jpg     ← (no usada aún)
+│   └── blog/                ← imágenes del blog
+│       ├── laptop-linux-2016.jpg   ← portada 1er post (Toshiba con stickers Linux + casco)
+│       ├── maqueta-2016.jpg        ← maqueta dibujada en 2016
+│       ├── ingepresupuestos-2026.png ← captura del software real (comparación)
+│       └── og-que-es-ingepresupuestos.jpg ← 1200×630 social del 1er post
 ├── README.md
 └── CLAUDE.md               ← este archivo
 ```
@@ -226,6 +237,38 @@ python3 -m http.server 8765
 7. ~~**Analytics privacy-friendly**~~ — ✅ Completado 2026-06-11. Cloudflare Web Analytics activado por Marco (inyección automática, sin cookies). La CSP ya permite el beacon.
 8. ~~**`sitemap.xml`**~~ — ✅ Completado 2026-06-11 junto con robots.txt, canonical, Twitter Cards y JSON-LD (SoftwareApplication + FAQPage). Falta registrar en Google Search Console.
 9. **Página de IngeConverter** — sección o página dedicada al convertidor S10.
+10. **Canales de instalación alternativos en «Descargar»** (a futuro, cuando estén aprobados) — hoy la landing solo ofrece descarga directa desde R2. Sumar:
+    - **Microsoft Store**: badge oficial + deep link a la ficha (Store ID `9PN8FKLP4RH5`, PFN `MarcoSumari.ingepresupuestos_1enpbchnxx3hm`). El MSIX 2.4.20 ya fue enviado a Partner Center (en certificación al 2026-06-16).
+    - **Winget**: bloque copiable `winget install ingepresupuestos` (o `winget install MarcoSumari.IngePresupuestos`). PR a `microsoft/winget-pkgs` #388765.
+    - Ambos artefactos viven en el repo del **producto** (`~/ingepresupuestos-pyside6/installer/msix` y `installer/winget`), no en este repo.
+
+---
+
+## Redes / Marketing — Facebook (2026-06-16)
+
+Marco creó la **página de Facebook** de IngePresupuestos. Material generado esta sesión (vive en este repo):
+- **Portada** `images/fb-cover.png` (1640×624) y **foto de perfil** `images/fb-profile.png` (500×500) — compuestas con **HTML + Chromium headless** (mismo flujo que el OG banner). Plantillas en `.cover-build/` (`cover.html`, `profile.html`, `frame.tmpl.html`), regenerables.
+- **Copy redactado** (en el historial del chat): post de bienvenida; **10 posts** «1 captura + característica» (programa, ACU, Gantt, valorizado, Curva S, reportes, fórmula polinómica, metrados, Tuxia, mapa) + 2 más (especificaciones, memoria); y el **anuncio pagado** (3 imágenes: programa + reportes + especificaciones; copy diferenciador — multiplataforma, IA, 5 formatos export, importa de S10/PowerCost/Delphin, prueba gratis).
+- Capturas fuente en `captura/` (raíz + `doc/` + `elabora/`).
+
+### 🔴 PENDIENTE próxima sesión — publicación de PAGA
+1. **Renderizar las 3 imágenes enmarcadas** del anuncio (1080×1080) con `.cover-build/frame.tmpl.html` (logo + barra naranja + título). Pares imagen→título: `captura/imagen principal.png` → «Presupuesto + ACU en una sola pantalla» · `captura/centro de reportes.png` → «13 reportes profesionales en un clic» · `captura/elabora/especificaciones.png` → «Especificaciones técnicas integradas». La plantilla ya quedó lista; solo faltó el render.
+2. Lanzar el **post promocionado** con ese copy + las 3 imágenes.
+
+---
+
+## Blog (lanzado 2026-06-18)
+
+Blog en `blog/` (no es un CMS: HTML estático, un archivo por post). Auto-deploy con Cloudflare Pages igual que la landing.
+
+- **Primer post PUBLICADO:** `blog/que-es-ingepresupuestos.html` — «IngePresupuestos: la historia desde sus inicios» (historia de origen personal: GNU/Linux → S10 restrictivo → Delphin/PowerCost → una alternativa más, multiplataforma). URL limpia en vivo: `https://ingepresupuestos.com/blog/que-es-ingepresupuestos` (Cloudflare redirige el `.html` con 307 a la versión sin extensión).
+- **Cómo agregar un post:** copiar `blog/articulo-template.html` → `blog/tu-slug.html`, rellenar `{{...}}`; copiar el bloque `<article class="post-card">` al principio de `blog/index.html` (el más nuevo va primero); añadir la URL a `sitemap.xml`.
+- **Funcionalidad del post (en `blog/blog.js` + `blog/blog.css`):**
+  - **Lightbox/zoom**: cualquier `<img class="zoomable">` y la `.article-cover` abren a pantalla completa (clic/✕/Esc cierran); muestra el `<figcaption>` del `<figure>`. Comparación lado a lado con `<figure class="figure-compare">`.
+  - **Botones de compartir** (`.share-bar`): WhatsApp/Facebook/X/LinkedIn (URLs `sharer`/`intent` hardcodeadas a la URL canónica) + «Copiar enlace» (JS, usa `data-url` de la barra).
+  - **Cache-busting** de `blog.css`/`blog.js` con `?v=N` (subir N al cambiarlos, si no el navegador cachea el viejo).
+- **SEO/social del post:** OG + Twitter card completos con imagen **1200×630 dedicada** (`images/blog/og-que-es-ingepresupuestos.jpg`, recortada a 1.91:1 del foto de la laptop — NO usar imágenes 4:3 como `og:image`, se recortan feo). JSON-LD Article + BreadcrumbList + FAQPage. Tras publicar, refrescar caché en los validadores (FB debugger «Scrape Again», LinkedIn Post Inspector, X validator).
+- **Copy para compartir en redes:** Facebook NO soporta markdown/negritas — pegar siempre **texto plano** (los emojis sí funcionan). Copy del lanzamiento en el historial del chat (opción «una alternativa más de software de presupuestos»).
 
 ---
 
